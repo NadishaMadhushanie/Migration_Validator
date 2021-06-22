@@ -57,4 +57,12 @@ public class SQLConstants {
         1-'apim_db' , 2-'AM_API_REVISION_METADATA'
     */
     public static String CHECK_TABLES_EXITS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
+
+    /* 1 to many*/
+
+    public static String VALIDATION1 ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_GATEWAY_ENVIRONMENT)<=(SELECT COUNT(*)  from apim_db.AM_GW_VHOST) THEN 'true' ELSE 'false' END AS Result;";
+
+
+    public static String VALIDATION2 ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_REVISION)<=(SELECT COUNT(*)  from apim_db.AM_DEPLOYMENT_REVISION_MAPPING) THEN 'true' ELSE 'false' END AS Result;";
+
 }

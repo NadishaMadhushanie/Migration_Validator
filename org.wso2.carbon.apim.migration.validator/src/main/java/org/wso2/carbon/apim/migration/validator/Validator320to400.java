@@ -1,7 +1,6 @@
 package org.wso2.carbon.apim.migration.validator;
-import org.wso2.carbon.apim.migration.validator.dao.ValidatorDAO320to400;
 
-import java.sql.*;
+import org.wso2.carbon.apim.migration.validator.dao.ValidatorDAO320to400;
 import java.util.logging.Logger;
 
 public class Validator320to400 {
@@ -469,7 +468,5 @@ public class Validator320to400 {
         }
 
     }
-
-
 
 }

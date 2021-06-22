@@ -27,17 +27,14 @@ public class ValidatorDAO320to400 {
             ps.setInt(2,tableCount);
             resultSet = ps.executeQuery();
 
-
             if(resultSet.next()) {
                 result = resultSet.getString("Result");
             }
 
-            System.out.println(result);
-
             ps.close();
             conn.close();
 
-        } //catch (SQLException | APIManagerDatabaseException e) {
+        }
        catch (SQLException e){
             //TODO
             System.out.println(e.getMessage());
@@ -78,7 +75,6 @@ public class ValidatorDAO320to400 {
                 result = resultSet.getString("Result");
             }
 
-            System.out.println(result);
 
         } catch (SQLException e) {
             //TODO
@@ -120,8 +116,6 @@ public boolean validateAPIMDbTableColumnCount(String dbName,String tableName,int
             result = resultSet.getString("Result");
         }
 
-        System.out.println(result);
-
     } catch (SQLException e) {
         //TODO
         System.out.println(e.getMessage());
@@ -158,8 +152,6 @@ public boolean validateAPIMDbUuidContent() {
         if (resultSet.next()) {
             result = resultSet.getString("Result");
         }
-
-        System.out.println(result);
 
     } catch (SQLException e) {
         //TODO
@@ -200,8 +192,6 @@ public boolean checkTableExits(String dbName,String tableName) {
             result = resultSet.getString("Result");
         }
 
-        System.out.println(result);
-
     } catch (SQLException e) {
         //TODO
         System.out.println(e.getMessage());
@@ -218,199 +208,3 @@ public boolean checkTableExits(String dbName,String tableName) {
 }
 
 }
-
-/*
-
-import java.sql.*;
-
-public class ValidatorDAO320to400 {
-
-    //1
-
-    public boolean validateAPIMDbTableCount(int tableCount, String dbName) {
-
-        String result = " ";
-
-        String sqlQuery = SQLConstants.GET_TABLE_COUNT;
-
-        try {
-            String url = "jdbc:mysql://localhost:3306/apim_db?autoReconnect=true&useSSL=false";
-            String uname = "root";
-            String pass = "12nadisha57";
-
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, uname, pass);
-            PreparedStatement ps = con.prepareStatement(sqlQuery);
-            ps.setString(1, dbName);
-            ps.setInt(2,tableCount);
-            ResultSet rs = ps.executeQuery();
-
-            rs.next();
-            result = rs.getString("Result");
-
-            ps.close();
-            con.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(result.equals("true")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-//2
-    public boolean validateAPIMDbRevisionCreation() {
-        String result = " ";
-
-        String sqlQuery = SQLConstants.VALIDATE_REVISION_CREATION;
-
-        try {
-            String url = "jdbc:mysql://localhost:3306/apim_db?autoReconnect=true&useSSL=false";
-            String uname = "root";
-            String pass = "12nadisha57";
-
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, uname, pass);
-            PreparedStatement ps = con.prepareStatement(sqlQuery);
-            ResultSet rs = ps.executeQuery();
-
-            rs.next();
-            result = rs.getString("Result");
-
-            ps.close();
-            con.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(result.equals("true")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-
-    //3
-    public boolean validateAPIMDbTableColumnCount(String dbName,String tableName,int count) {
-        String result = " ";
-
-        String sqlQuery = SQLConstants.GET_COLUMN_COUNT;
-
-        try {
-            String url = "jdbc:mysql://localhost:3306/apim_db?autoReconnect=true&useSSL=false";
-            String uname = "root";
-            String pass = "12nadisha57";
-
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, uname, pass);
-            PreparedStatement ps = con.prepareStatement(sqlQuery);
-            ps.setString(1,dbName);
-            ps.setString(2,tableName);
-            ps.setInt(3,count);
-            ResultSet rs = ps.executeQuery();
-
-            rs.next();
-            result = rs.getString("Result");
-
-            ps.close();
-            con.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(result.equals("true")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-
-//4
-
-    public boolean validateAPIMDbUuidContent() {
-        String result = " ";
-
-        String sqlQuery = SQLConstants.VALIDATE_API_UUID_CONTENT;
-
-        try {
-            String url = "jdbc:mysql://localhost:3306/apim_db?autoReconnect=true&useSSL=false";
-            String uname = "root";
-            String pass = "12nadisha57";
-
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, uname, pass);
-            PreparedStatement ps = con.prepareStatement(sqlQuery);
-
-            ResultSet rs = ps.executeQuery();
-
-            rs.next();
-            result = rs.getString("Result");
-
-            ps.close();
-            con.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(result.equals("true")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-
-//5
-
-    public boolean checkTableExits(String dbName,String tableName) {
-        String result = " ";
-
-        String sqlQuery = SQLConstants.CHECK_TABLES_EXITS;
-
-        try {
-            String url = "jdbc:mysql://localhost:3306/apim_db?autoReconnect=true&useSSL=false";
-            String uname = "root";
-            String pass = "12nadisha57";
-
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, uname, pass);
-            PreparedStatement ps = con.prepareStatement(sqlQuery);
-            ps.setString(1,dbName);
-            ps.setString(2,tableName);
-            ResultSet rs = ps.executeQuery();
-
-            rs.next();
-            result = rs.getString("Result");
-
-            ps.close();
-            con.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(result.equals("true")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-
-}
-
-*/
