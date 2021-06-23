@@ -51,6 +51,28 @@ public class PDFDoc {
                 }
 
 
+                //6
+                String vhost_relation_validation = Validator320to400.validateRelationVhost();
+                log.info(vhost_relation_validation);
+
+                //7
+                String revision_relation_validation = Validator320to400.validateRelationRevision();
+                log.info(revision_relation_validation);
+
+                //8
+                String published_api_relation_validation = Validator320to400.validateRelationPublishedApis();
+                log.info(published_api_relation_validation);
+
+                //9
+                String[] table_removed_methods ={Validator320to400.checkTableRemoved1(),Validator320to400.checkTableRemoved2()};
+                String[] table_removed = new String[100];
+
+                for(int i=0;i<2;i++)
+                {
+                        table_removed[i+1] = table_removed_methods[i];
+                        log.info(table_removed[i+1]);
+                }
+
 
                 Document doc = new Document();
                 PdfWriter.getInstance(doc, new FileOutputStream("Report.pdf"));
@@ -82,6 +104,21 @@ public class PDFDoc {
                 for(int i=0;i<20;i++)
                 {
                         table.addCell(table_exits[i+1]);
+                }
+
+                //6
+                table.addCell(vhost_relation_validation);
+
+                //7
+                table.addCell(revision_relation_validation);
+
+                //8
+                table.addCell(published_api_relation_validation);
+
+                //9
+                for(int i=0;i<2;i++)
+                {
+                        table.addCell(table_removed[i+1]);
                 }
 
 

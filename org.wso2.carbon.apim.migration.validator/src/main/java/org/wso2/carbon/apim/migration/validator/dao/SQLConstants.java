@@ -4,7 +4,7 @@ public class SQLConstants {
 
     /*api-m 4.0.0 apim_db*/
 
-    /*table count should be equal to 177    1-apim_db , 2-176*/
+    /*table count should be equal to 177    1-apim_db , 2-177*/
     public static String GET_TABLE_COUNT = "SELECT  CASE WHEN (SELECT count(*) AS TOTAL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? )=(?) THEN 'true' ELSE 'false' END AS Result;";
 
     /*In AM_API table, if status is published , revision should be created      1-apim_db.AM_API , 2-apim_db.AM_API*/
@@ -60,9 +60,23 @@ public class SQLConstants {
 
     /* 1 to many*/
 
-    public static String VALIDATION1 ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_GATEWAY_ENVIRONMENT)<=(SELECT COUNT(*)  from apim_db.AM_GW_VHOST) THEN 'true' ELSE 'false' END AS Result;";
+    //6
+    public static String CHECK_RELATION_VHOST ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_GATEWAY_ENVIRONMENT)<=(SELECT COUNT(*)  from apim_db.AM_GW_VHOST) THEN 'true' ELSE 'false' END AS Result;";
 
+    //7
+    public static String CHECK_RELATION_REVISION ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_REVISION)<=(SELECT COUNT(*)  from apim_db.AM_DEPLOYMENT_REVISION_MAPPING) THEN 'true' ELSE 'false' END AS Result;";
 
-    public static String VALIDATION2 ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_REVISION)<=(SELECT COUNT(*)  from apim_db.AM_DEPLOYMENT_REVISION_MAPPING) THEN 'true' ELSE 'false' END AS Result;";
+    //8
+    public static String CHECK_RELATION_PUBLISHED_APIS ="SELECT CASE WHEN (SELECT COUNT(*)  from apim_db.AM_GW_PUBLISHED_API_DETAILS)<=(SELECT COUNT(*)  from apim_db.AM_GW_API_DEPLOYMENTS) THEN 'true' ELSE 'false' END AS Result;";
+
+    /*AM_LABELS,AM_LABEL_URLS tables should be remove after the migration from apim_db
+    1-'apim_db' , 2-'AM_LABELS'
+    1-'apim_db' , 2-'AM_LABEL_URLS'
+    * */
+
+    //9
+
+    public static String CHECK_TABLE_REMOVED = "SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(0) THEN 'true' ELSE 'false' END AS Result;";
+
 
 }

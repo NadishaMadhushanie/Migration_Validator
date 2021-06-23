@@ -469,4 +469,78 @@ public class Validator320to400 {
 
     }
 
+    //6
+    public static String validateRelationVhost() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean tableExits = validate.checkRelationVhost();
+
+        if(tableExits) {
+            return " * 3.2.0 to 4.0.0 AM_GATEWAY_ENVIRONMENT and AM_GW_VHOST table relation validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 AM_GATEWAY_ENVIRONMENT and AM_GW_VHOST table relation validation is fail.";
+        }
+
+    }
+
+    //7
+    public static String validateRelationRevision() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean tableExits = validate.checkRelationRevision();
+
+        if(tableExits) {
+            return " * 3.2.0 to 4.0.0 AM_REVISION and AM_DEPLOYMENT_REVISION_MAPPING table relation validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 AM_REVISION and AM_DEPLOYMENT_REVISION_MAPPING table relation validation is fail.";
+        }
+
+    }
+
+    //8
+    public static String validateRelationPublishedApis() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean tableExits = validate.checkRelationRevision();
+
+        if(tableExits) {
+            return " * 3.2.0 to 4.0.0 AM_GW_PUBLISHED_API_DETAILS and AM_GW_API_DEPLOYMENTS table relation validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 AM_GW_PUBLISHED_API_DETAILS and AM_GW_API_DEPLOYMENTS table relation validation is fail.";
+        }
+
+    }
+
+    //9
+    public static String checkTableRemoved1() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean tableExits = validate.checkTablesRemoved("apim_db","AM_LABELS");
+
+        if(tableExits) {
+            return " * 3.2.0 to 4.0.0 AM_LABELS table remove validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 AM_LABELS table remove validation is fail.";
+        }
+
+    }
+
+    public static String checkTableRemoved2() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean tableExits = validate.checkTablesRemoved("apim_db","AM_LABEL_URLS");
+
+        if(tableExits) {
+            return " * 3.2.0 to 4.0.0 AM_LABEL_URLS table remove validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 AM_LABEL_URLS table remove validation is fail.";
+        }
+
+    }
+
 }

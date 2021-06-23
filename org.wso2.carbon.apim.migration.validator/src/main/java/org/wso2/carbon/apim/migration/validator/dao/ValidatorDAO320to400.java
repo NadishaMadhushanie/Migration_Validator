@@ -207,4 +207,154 @@ public boolean checkTableExits(String dbName,String tableName) {
     }
 }
 
+
+//6
+public boolean checkRelationVhost() {
+    String result = " ";
+
+    String sqlQuery = SQLConstants.CHECK_RELATION_VHOST;
+
+    Connection conn = null;
+    PreparedStatement ps = null;
+    List<String> versionList = new ArrayList<String>();
+    ResultSet resultSet = null;
+
+    try {
+        conn = APIMgtDBUtil.getConnection();
+        ps = conn.prepareStatement(sqlQuery);
+        resultSet = ps.executeQuery();
+
+
+        if (resultSet.next()) {
+            result = resultSet.getString("Result");
+        }
+
+    } catch (SQLException e) {
+        //TODO
+        System.out.println(e.getMessage());
+
+    } finally {
+        APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+    }
+
+    if (result.equals("true")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//7
+
+    public boolean checkRelationRevision() {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.CHECK_RELATION_REVISION;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+//8
+
+    public boolean checkRelationPulishedApis() {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.CHECK_RELATION_PUBLISHED_APIS;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+//9
+
+    public boolean checkTablesRemoved(String dbName,String tableName) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.CHECK_TABLE_REMOVED;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setString(1, dbName);
+            ps.setString(2, tableName);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
