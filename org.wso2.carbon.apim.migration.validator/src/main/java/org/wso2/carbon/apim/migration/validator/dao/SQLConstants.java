@@ -78,5 +78,23 @@ public class SQLConstants {
 
     public static String CHECK_TABLE_REMOVED = "SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(0) THEN 'true' ELSE 'false' END AS Result;";
 
+    //10
+    //AM_API TABLE PUBLISHED COUNT SHOULD BE EQUAL TO AM_REVISION TABLE COUNT
+    // 1- 'PUBLISHED'
+    public static String CHECK_TABLE_CONTENT1 ="SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_API where STATUS = ?)=(SELECT count(*) FROM apim_db.AM_REVISION) THEN 'true' ELSE 'false' END AS Result;";
+
+
+    //11
+    //AM_API_REVISION_METADATA TABLE  COUNT SHOULD BE EQUAL TO AM_REVISION TABLE COUNT
+    public static String CHECK_TABLE_CONTENT2 ="SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_REVISION)=(SELECT count(*) FROM apim_db.AM_API_REVISION_METADATA) THEN 'true' ELSE 'false' END AS Result;";
+
+
+    //12
+    //AM_GW_API_ARTIFACTS TABLE  COUNT SHOULD BE EQUAL TO AM_GW_PUBLISHED_API_DETAILS TABLE COUNT
+    public static String CHECK_TABLE_CONTENT3 ="SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_GW_API_ARTIFACTS)=(SELECT count(*) FROM apim_db.AM_GW_PUBLISHED_API_DETAILS) THEN 'true' ELSE 'false' END AS Result;";
+
+
+    //shared_db
+
 
 }

@@ -73,6 +73,15 @@ public class PDFDoc {
                         log.info(table_removed[i+1]);
                 }
 
+                //10,11,12
+                String[] tables_content_methods ={Validator320to400.checkTableContent1(),Validator320to400.checkTableContent2(),Validator320to400.checkTableContent3()};
+                String[] tables_content = new String[100];
+
+                for(int i=0;i<3;i++)
+                {
+                    tables_content[i+1] = tables_content_methods[i];
+                    log.info(tables_content[i+1]);
+                }
 
                 Document doc = new Document();
                 PdfWriter.getInstance(doc, new FileOutputStream("Report.pdf"));
@@ -119,6 +128,12 @@ public class PDFDoc {
                 for(int i=0;i<2;i++)
                 {
                         table.addCell(table_removed[i+1]);
+                }
+
+                //10,11,12
+                for(int i=0;i<3;i++)
+                {
+                        table.addCell(tables_content[i+1]);
                 }
 
 
