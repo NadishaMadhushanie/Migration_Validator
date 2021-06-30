@@ -96,5 +96,38 @@ public class SQLConstants {
 
     //shared_db
 
+    //s1
 
+    /*table count should be equal to 42    1-shared_db , 2-42*/
+    public static String SHARED_DB_GET_TABLE_COUNT = "SELECT  CASE WHEN (SELECT count(*) AS TOTAL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? )=(?) THEN 'true' ELSE 'false' END AS Result;";
+
+    //s2
+
+    /*check whether newly added tables are exits
+        1-'shared_db' , 2-'UM_HYBRID_GROUP_ROLE'
+     */
+    public static String SHARED_DB_CHECK_TABLES_EXITS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
+
+    //s3
+
+     /*column count is changed after the migration in some tables
+    1-'shared_db' , 2-'UM_TENANT'  , 3-7
+    */
+     public static String SHARED_DB_GET_COLUMN_COUNT = "SELECT CASE WHEN (select count(*) as columns from INFORMATION_SCHEMA.COLUMNS where table_schema = ? and table_name = ?)=(?) THEN 'true' ELSE 'false' END AS Result;";
+
+
+     //S4
+     public static String SHARED_DB_CHECK_TABLE_CONTENT1 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_PATH )<=(SELECT count(*) FROM shared_db.REG_RESOURCE) THEN 'true' ELSE 'false' END AS Result;";
+
+    //S5
+    public static String SHARED_DB_CHECK_TABLE_CONTENT2 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_USER )<=(SELECT count(*) FROM shared_db.UM_USER_ATTRIBUTE) THEN 'true' ELSE 'false' END AS Result;";
+
+    //S6
+    public static String SHARED_DB_CHECK_TABLE_CONTENT3 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_USER )=(SELECT count(*) FROM shared_db.UM_UUID_DOMAIN_MAPPER) THEN 'true' ELSE 'false' END AS Result;";
+
+    //S7
+    public static String SHARED_DB_CHECK_TABLE_CONTENT4 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_PROPERTY )=(SELECT count(*) FROM shared_db.REG_RESOURCE_PROPERTY) THEN 'true' ELSE 'false' END AS Result;";
+
+    //S8
+    public static String SHARED_DB_CHECK_TABLE_CONTENT5 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_RESOURCE_TAG )<=(SELECT count(*) FROM shared_db.REG_TAG) THEN 'true' ELSE 'false' END AS Result;";
 }

@@ -590,4 +590,126 @@ public class Validator320to400 {
 
     }
 
+    //shared_db
+
+    //s1
+    public static String sharedDbCheckTablesCount() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableCount = validate.sharedDbCheckTablesCount("shared_db",42);
+
+        if(sharedDbTableCount) {
+            return " * 3.2.0 to 4.0.0 shared_db tables count validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db tables count validation is fail.";
+        }
+
+    }
+
+    //s2
+    public static String sharedDbCheckTablesExists() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableExits = validate.sharedDbCheckTablesExits("shared_db","UM_HYBRID_GROUP_ROLE");
+
+        if(sharedDbTableExits) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE table exists validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db shared_db UM_HYBRID_GROUP_ROLE table exists validation is fail.";
+        }
+
+    }
+
+    //s3
+    public static String sharedDbCheckColumnCount() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbColumnCount = validate.sharedDbCheckColumnCount("shared_db","UM_TENANT",7);
+
+        if(sharedDbColumnCount) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_TENANT table, column count validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db UM_TENANT table, column count validation is fail.";
+        }
+
+    }
+
+    //s4
+    public static String sharedDbCheckTableContent1() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent1 = validate.sharedDbCheckTablesContent1();
+
+        if(sharedDbTableContent1) {
+            return " * 3.2.0 to 4.0.0 shared_db REG_PATH , REG_RESOURCE tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db REG_PATH , REG_RESOURCE tables content validation is fail.";
+        }
+
+    }
+
+    //s5
+    public static String sharedDbCheckTableContent2() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent2 = validate.sharedDbCheckTablesContent2();
+
+        if(sharedDbTableContent2) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_USER , UM_USER_ATTRIBUTE tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db UM_USER , UM_USER_ATTRIBUTE tables content validation is fail.";
+        }
+
+    }
+
+    //s6
+    public static String sharedDbCheckTableContent3() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent3 = validate.sharedDbCheckTablesContent3();
+
+        if(sharedDbTableContent3) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_USER , UM_UUID_DOMAIN_MAPPER tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db UM_USER , UM_UUID_DOMAIN_MAPPER tables content validation is fail.";
+        }
+
+    }
+
+    //s7
+    public static String sharedDbCheckTableContent4() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent4 = validate.sharedDbCheckTablesContent4();
+
+        if(sharedDbTableContent4) {
+            return " * 3.2.0 to 4.0.0 shared_db REG_PROPERTY , REG_RESOURCE_PROPERTY tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db REG_PROPERTY , REG_RESOURCE_PROPERTY tables content validation is fail.";
+        }
+
+    }
+
+    //s8
+    public static String sharedDbCheckTableContent5() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent5 = validate.sharedDbCheckTablesContent5();
+
+        if(sharedDbTableContent5) {
+            return " * 3.2.0 to 4.0.0 shared_db REG_RESOURCE_TAG , REG_TAG tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db REG_RESOURCE_TAG , REG_TAG tables content validation is fail.";
+        }
+
+    }
+
 }

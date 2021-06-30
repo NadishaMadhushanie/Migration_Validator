@@ -83,6 +83,28 @@ public class PDFDoc {
                     log.info(tables_content[i+1]);
                 }
 
+                //s1
+                String shared_db_table_count = Validator320to400.sharedDbCheckTablesCount();
+                log.info(shared_db_table_count);
+
+                //s2
+                String shared_db_check_table_exist = Validator320to400.sharedDbCheckTablesExists();
+                log.info(shared_db_check_table_exist);
+
+                //s3
+                String shared_db_check_column_count = Validator320to400.sharedDbCheckColumnCount();
+                log.info(shared_db_check_column_count);
+
+                //s4-s8
+                String[] shared_db_tables_content_methods={Validator320to400.sharedDbCheckTableContent1(),Validator320to400.sharedDbCheckTableContent2(),Validator320to400.sharedDbCheckTableContent3(),Validator320to400.sharedDbCheckTableContent4(),Validator320to400.sharedDbCheckTableContent5()};
+                String[] shared_db_tables_content = new String[100];
+
+                for(int i=0;i<5;i++)
+                {
+                        shared_db_tables_content[i+1] = shared_db_tables_content_methods[i];
+                        log.info(shared_db_tables_content[i+1]);
+                }
+
                 Document doc = new Document();
                 PdfWriter.getInstance(doc, new FileOutputStream("Report.pdf"));
                 doc.open();
@@ -136,6 +158,20 @@ public class PDFDoc {
                         table.addCell(tables_content[i+1]);
                 }
 
+                //s1
+                table.addCell(shared_db_table_count);
+
+                //s2
+                table.addCell(shared_db_check_table_exist);
+
+                //s3
+                table.addCell(shared_db_check_column_count);
+
+                //s4-s8
+                for(int i=0;i<5;i++)
+                {
+                        table.addCell(shared_db_tables_content[i+1]);
+                }
 
                 paragraph.add(table);
                 doc.add(paragraph);
