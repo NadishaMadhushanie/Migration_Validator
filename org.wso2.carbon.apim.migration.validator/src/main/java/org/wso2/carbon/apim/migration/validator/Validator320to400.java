@@ -712,4 +712,34 @@ public class Validator320to400 {
 
     }
 
+    //s9
+    public static String sharedDbCheckTableContent6() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent6 = validate.sharedDbCheckTablesContent6();
+
+        if(sharedDbTableContent6) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE , UM_HYBRID_ROLE tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE , UM_HYBRID_ROLE tables content validation is fail.";
+        }
+
+    }
+
+    //s10
+    public static String sharedDbCheckTableContent7() {
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean sharedDbTableContent7 = validate.sharedDbCheckTablesContent7();
+
+        if(sharedDbTableContent7) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE , UM_HYBRID_USER_ROLE tables content validation is successful.";
+        }
+        else {
+            return "3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE , UM_HYBRID_USER_ROLE tables content validation is fail.";
+        }
+
+    }
+
 }

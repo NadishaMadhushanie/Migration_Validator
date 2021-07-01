@@ -95,11 +95,11 @@ public class PDFDoc {
                 String shared_db_check_column_count = Validator320to400.sharedDbCheckColumnCount();
                 log.info(shared_db_check_column_count);
 
-                //s4-s8
-                String[] shared_db_tables_content_methods={Validator320to400.sharedDbCheckTableContent1(),Validator320to400.sharedDbCheckTableContent2(),Validator320to400.sharedDbCheckTableContent3(),Validator320to400.sharedDbCheckTableContent4(),Validator320to400.sharedDbCheckTableContent5()};
+                //s4-s10
+                String[] shared_db_tables_content_methods={Validator320to400.sharedDbCheckTableContent1(),Validator320to400.sharedDbCheckTableContent2(),Validator320to400.sharedDbCheckTableContent3(),Validator320to400.sharedDbCheckTableContent4(),Validator320to400.sharedDbCheckTableContent5(),Validator320to400.sharedDbCheckTableContent6(),Validator320to400.sharedDbCheckTableContent7()};
                 String[] shared_db_tables_content = new String[100];
 
-                for(int i=0;i<5;i++)
+                for(int i=0;i<7;i++)
                 {
                         shared_db_tables_content[i+1] = shared_db_tables_content_methods[i];
                         log.info(shared_db_tables_content[i+1]);
@@ -167,8 +167,8 @@ public class PDFDoc {
                 //s3
                 table.addCell(shared_db_check_column_count);
 
-                //s4-s8
-                for(int i=0;i<5;i++)
+                //s4-s10
+                for(int i=0;i<7;i++)
                 {
                         table.addCell(shared_db_tables_content[i+1]);
                 }

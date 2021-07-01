@@ -763,4 +763,77 @@ public boolean checkRelationVhost() {
         }
     }
 
+    //s9
+    public boolean sharedDbCheckTablesContent6() {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.SHARED_DB_CHECK_TABLE_CONTENT6;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //s10
+
+    public boolean sharedDbCheckTablesContent7() {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.SHARED_DB_CHECK_TABLE_CONTENT7;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

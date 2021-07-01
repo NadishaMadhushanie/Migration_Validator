@@ -119,15 +119,24 @@ public class SQLConstants {
      //S4
      public static String SHARED_DB_CHECK_TABLE_CONTENT1 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_PATH )<=(SELECT count(*) FROM shared_db.REG_RESOURCE) THEN 'true' ELSE 'false' END AS Result;";
 
-    //S5
-    public static String SHARED_DB_CHECK_TABLE_CONTENT2 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_USER )<=(SELECT count(*) FROM shared_db.UM_USER_ATTRIBUTE) THEN 'true' ELSE 'false' END AS Result;";
+    //S5 s
+    public static String SHARED_DB_CHECK_TABLE_CONTENT2 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_USER )*2=(SELECT count(*) FROM shared_db.UM_USER_ATTRIBUTE) THEN 'true' ELSE 'false' END AS Result;";
 
-    //S6
+    //S6 s
     public static String SHARED_DB_CHECK_TABLE_CONTENT3 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_USER )=(SELECT count(*) FROM shared_db.UM_UUID_DOMAIN_MAPPER) THEN 'true' ELSE 'false' END AS Result;";
 
     //S7
     public static String SHARED_DB_CHECK_TABLE_CONTENT4 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_PROPERTY )=(SELECT count(*) FROM shared_db.REG_RESOURCE_PROPERTY) THEN 'true' ELSE 'false' END AS Result;";
 
     //S8
-    public static String SHARED_DB_CHECK_TABLE_CONTENT5 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_RESOURCE_TAG )<=(SELECT count(*) FROM shared_db.REG_TAG) THEN 'true' ELSE 'false' END AS Result;";
+    public static String SHARED_DB_CHECK_TABLE_CONTENT5 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.REG_RESOURCE_TAG )=(SELECT count(*) FROM shared_db.REG_TAG) THEN 'true' ELSE 'false' END AS Result;";
+
+
+    /*If new entry added to UM_HYBRID_GROUP_ROLE table, it should added to UM_HYBRID_ROLE,UM_HYBRID_USER_ROLE tables.*/
+    //s9 s
+    public static String SHARED_DB_CHECK_TABLE_CONTENT6 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_HYBRID_GROUP_ROLE )<=(SELECT count(*) FROM shared_db.UM_HYBRID_ROLE) THEN 'true' ELSE 'false' END AS Result;";
+
+    //s10 s
+    public static String SHARED_DB_CHECK_TABLE_CONTENT7 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_HYBRID_GROUP_ROLE )<=(SELECT count(*) FROM shared_db.UM_HYBRID_USER_ROLE) THEN 'true' ELSE 'false' END AS Result;";
+
 }
