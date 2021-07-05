@@ -189,282 +189,282 @@ public class Validator320to400 {
 
     }
 
-    public static String checkTableExits1() {
+    public static String checkTableExists1() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_API_SERVICE_MAPPING");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_API_SERVICE_MAPPING");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_API_SERVICE_MAPPING table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API_SERVICE_MAPPING table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_API_SERVICE_MAPPING table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_API_SERVICE_MAPPING table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits2() {
+    public static String checkTableExists2() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_DEPLOYMENT_REVISION_MAPPING");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_DEPLOYMENT_REVISION_MAPPING");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_DEPLOYMENT_REVISION_MAPPING table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_DEPLOYMENT_REVISION_MAPPING table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_DEPLOYMENT_REVISION_MAPPING table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_DEPLOYMENT_REVISION_MAPPING table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits3() {
+    public static String checkTableExists3() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_GATEWAY_ENVIRONMENT");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_GATEWAY_ENVIRONMENT");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_GATEWAY_ENVIRONMENT table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_GATEWAY_ENVIRONMENT table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_GATEWAY_ENVIRONMENT table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_GATEWAY_ENVIRONMENT table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits4() {
+    public static String checkTableExists4() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_GW_API_DEPLOYMENTS");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_GW_API_DEPLOYMENTS");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_GW_API_DEPLOYMENTS table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_GW_API_DEPLOYMENTS table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_GW_API_DEPLOYMENTS table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_GW_API_DEPLOYMENTS table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits5() {
+    public static String checkTableExists5() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_GW_VHOST");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_GW_VHOST");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_GW_VHOST table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_GW_VHOST table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_GW_VHOST table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_GW_VHOST table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits6() {
+    public static String checkTableExists6() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_REVISION");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_REVISION");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_REVISION table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_REVISION table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_REVISION table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_REVISION table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits7() {
+    public static String checkTableExists7() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_SERVICE_CATALOG");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_SERVICE_CATALOG");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_SERVICE_CATALOG table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_SERVICE_CATALOG table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_SERVICE_CATALOG table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_SERVICE_CATALOG table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits8() {
+    public static String checkTableExists8() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_WEBHOOKS_SUBSCRIPTION");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_WEBHOOKS_SUBSCRIPTION");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_SUBSCRIPTION table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_SUBSCRIPTION table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_SUBSCRIPTION table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_SUBSCRIPTION table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits9() {
+    public static String checkTableExists9() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_WEBHOOKS_UNSUBSCRIPTION");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_WEBHOOKS_UNSUBSCRIPTION");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_UNSUBSCRIPTION table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_UNSUBSCRIPTION table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_UNSUBSCRIPTION table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_UNSUBSCRIPTION table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits10() {
+    public static String checkTableExists10() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_CONFIG_ATTRIBUTE");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_ATTRIBUTE");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_ATTRIBUTE table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_ATTRIBUTE table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_ATTRIBUTE table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_ATTRIBUTE table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits11() {
+    public static String checkTableExists11() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_CONFIG_FILE");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_FILE");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_FILE table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_FILE table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_FILE table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_FILE table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits12() {
+    public static String checkTableExists12() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_CONFIG_RESOURCE");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_RESOURCE");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_RESOURCE table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_RESOURCE table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_RESOURCE table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_RESOURCE table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits13() {
+    public static String checkTableExists13() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_CONFIG_TYPE");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_TYPE");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_TYPE table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_TYPE table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_TYPE table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_CONFIG_TYPE table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits14() {
+    public static String checkTableExists14() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_CORS_ASSOCIATION");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_CORS_ASSOCIATION");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_CORS_ASSOCIATION table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CORS_ASSOCIATION table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_CORS_ASSOCIATION table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_CORS_ASSOCIATION table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits15() {
+    public static String checkTableExists15() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_CORS_ORIGIN");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_CORS_ORIGIN");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_CORS_ORIGIN table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CORS_ORIGIN table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_CORS_ORIGIN table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_CORS_ORIGIN table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits16() {
+    public static String checkTableExists16() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_REMOTE_FETCH_CONFIG");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_REMOTE_FETCH_CONFIG");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_CONFIG table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_CONFIG table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_CONFIG table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_CONFIG table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits17() {
+    public static String checkTableExists17() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_REMOTE_FETCH_REVISIONS");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_REMOTE_FETCH_REVISIONS");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_REVISIONS table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_REVISIONS table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_REVISIONS table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_REVISIONS table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits18() {
+    public static String checkTableExists18() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_USER_FUNCTIONALITY_MAPPING");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_USER_FUNCTIONALITY_MAPPING");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_MAPPING table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_MAPPING table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_MAPPING table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_MAPPING table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits19() {
+    public static String checkTableExists19() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","IDN_USER_FUNCTIONALITY_PROPERTY");
+        boolean tableExists = validate.checkTableExists("apim_db","IDN_USER_FUNCTIONALITY_PROPERTY");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_PROPERTY table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_PROPERTY table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_PROPERTY table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_PROPERTY table exists validation is fail.";
         }
 
     }
 
-    public static String checkTableExits20() {
+    public static String checkTableExists20() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTableExits("apim_db","AM_API_REVISION_METADATA");
+        boolean tableExists = validate.checkTableExists("apim_db","AM_API_REVISION_METADATA");
 
-        if(tableExits) {
-            return " * 3.2.0 to 4.0.0 apim_db AM_API_REVISION_METADATA table validation is successful.";
+        if(tableExists) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API_REVISION_METADATA table exists validation is successful.";
         }
         else {
-            return "3.2.0 to 4.0.0 apim_db AM_API_REVISION_METADATA table validation is fail.";
+            return "3.2.0 to 4.0.0 apim_db AM_API_REVISION_METADATA table exists validation is fail.";
         }
 
     }
@@ -473,9 +473,9 @@ public class Validator320to400 {
     public static String validateRelationVhost() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkRelationVhost();
+        boolean tableExists = validate.checkRelationVhost();
 
-        if(tableExits) {
+        if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GATEWAY_ENVIRONMENT and AM_GW_VHOST table relation validation is successful.";
         }
         else {
@@ -488,9 +488,9 @@ public class Validator320to400 {
     public static String validateRelationRevision() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkRelationRevision();
+        boolean tableExists = validate.checkRelationRevision();
 
-        if(tableExits) {
+        if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_REVISION and AM_DEPLOYMENT_REVISION_MAPPING table relation validation is successful.";
         }
         else {
@@ -503,9 +503,9 @@ public class Validator320to400 {
     public static String validateRelationPublishedApis() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkRelationRevision();
+        boolean tableExists = validate.checkRelationRevision();
 
-        if(tableExits) {
+        if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GW_PUBLISHED_API_DETAILS and AM_GW_API_DEPLOYMENTS table relation validation is successful.";
         }
         else {
@@ -518,9 +518,9 @@ public class Validator320to400 {
     public static String checkTableRemoved1() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTablesRemoved("apim_db","AM_LABELS");
+        boolean tableExists = validate.checkTablesRemoved("apim_db","AM_LABELS");
 
-        if(tableExits) {
+        if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_LABELS table remove validation is successful.";
         }
         else {
@@ -532,9 +532,9 @@ public class Validator320to400 {
     public static String checkTableRemoved2() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExits = validate.checkTablesRemoved("apim_db","AM_LABEL_URLS");
+        boolean tableExists = validate.checkTablesRemoved("apim_db","AM_LABEL_URLS");
 
-        if(tableExits) {
+        if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_LABEL_URLS table remove validation is successful.";
         }
         else {
@@ -611,9 +611,9 @@ public class Validator320to400 {
     public static String sharedDbCheckTablesExists() {
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean sharedDbTableExits = validate.sharedDbCheckTablesExits("shared_db","UM_HYBRID_GROUP_ROLE");
+        boolean sharedDbTableExists = validate.sharedDbCheckTablesExists("shared_db","UM_HYBRID_GROUP_ROLE");
 
-        if(sharedDbTableExits) {
+        if(sharedDbTableExists) {
             return " * 3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE table exists validation is successful.";
         }
         else {

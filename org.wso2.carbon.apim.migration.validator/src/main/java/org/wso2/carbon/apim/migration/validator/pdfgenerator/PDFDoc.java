@@ -41,13 +41,13 @@ public class PDFDoc {
                 log.info(uuid_column_validation);
 
                 //5
-                String[] methods = {Validator320to400.checkTableExits1(),Validator320to400.checkTableExits2(),Validator320to400.checkTableExits3(),Validator320to400.checkTableExits4(),Validator320to400.checkTableExits5(),Validator320to400.checkTableExits6(),Validator320to400.checkTableExits7(),Validator320to400.checkTableExits8(),Validator320to400.checkTableExits9(),Validator320to400.checkTableExits10(),Validator320to400.checkTableExits11(),Validator320to400.checkTableExits12(),Validator320to400.checkTableExits13(),Validator320to400.checkTableExits14(),Validator320to400.checkTableExits15(),Validator320to400.checkTableExits16(),Validator320to400.checkTableExits17(),Validator320to400.checkTableExits18(),Validator320to400.checkTableExits19(),Validator320to400.checkTableExits20()};
-                String[] table_exits = new String[100];
+                String[] methods = {Validator320to400.checkTableExists1(),Validator320to400.checkTableExists2(),Validator320to400.checkTableExists3(),Validator320to400.checkTableExists4(),Validator320to400.checkTableExists5(),Validator320to400.checkTableExists6(),Validator320to400.checkTableExists7(),Validator320to400.checkTableExists8(),Validator320to400.checkTableExists9(),Validator320to400.checkTableExists10(),Validator320to400.checkTableExists11(),Validator320to400.checkTableExists12(),Validator320to400.checkTableExists13(),Validator320to400.checkTableExists14(),Validator320to400.checkTableExists15(),Validator320to400.checkTableExists16(),Validator320to400.checkTableExists17(),Validator320to400.checkTableExists18(),Validator320to400.checkTableExists19(),Validator320to400.checkTableExists20()};
+                String[] table_exists = new String[100];
 
                 for(int i=0;i<20;i++)
                 {
-                         table_exits[i+1] = methods[i];
-                         log.info(table_exits[i+1]);
+                         table_exists[i+1] = methods[i];
+                         log.info(table_exists[i+1]);
                 }
 
 
@@ -110,7 +110,9 @@ public class PDFDoc {
                 doc.open();
 
                 Font bold = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);
-                Paragraph paragraph = new Paragraph("Migration Validation Status.");
+                Paragraph paragraph = new Paragraph("MIGRATION VALIDATION STATUS.");
+
+                Paragraph paragraph1 = new Paragraph("1. Structural Validation.");
 
                 PdfPTable table = new PdfPTable(1);
                 Stream.of("STATUS").forEach(table::addCell);
@@ -118,33 +120,18 @@ public class PDFDoc {
                 //1
                 table.addCell(table_count);
 
-                //2
-                table.addCell(revision_creation);
-
                 //3
                 for(int i=0;i<10;i++)
                 {
                         table.addCell(column_count[i+1]);
                 }
 
-
-                //4
-                table.addCell(uuid_column_validation);
-
                 //5
                 for(int i=0;i<20;i++)
                 {
-                        table.addCell(table_exits[i+1]);
+                        table.addCell(table_exists[i+1]);
                 }
 
-                //6
-                table.addCell(vhost_relation_validation);
-
-                //7
-                table.addCell(revision_relation_validation);
-
-                //8
-                table.addCell(published_api_relation_validation);
 
                 //9
                 for(int i=0;i<2;i++)
@@ -152,11 +139,6 @@ public class PDFDoc {
                         table.addCell(table_removed[i+1]);
                 }
 
-                //10,11,12
-                for(int i=0;i<3;i++)
-                {
-                        table.addCell(tables_content[i+1]);
-                }
 
                 //s1
                 table.addCell(shared_db_table_count);
@@ -167,14 +149,65 @@ public class PDFDoc {
                 //s3
                 table.addCell(shared_db_check_column_count);
 
+
+                doc.add(paragraph);
+
+                paragraph1.add(table);
+                doc.add(paragraph1);
+
+
+                Paragraph paragraph2 = new Paragraph("2. Table Relations Validation.");
+
+                PdfPTable table2 = new PdfPTable(1);
+                Stream.of("STATUS").forEach(table2::addCell);
+
+
+                //2
+                table2.addCell(revision_creation);
+
+                //4
+                table2.addCell(uuid_column_validation);
+
+                //6
+                table2.addCell(vhost_relation_validation);
+
+                //7
+                table2.addCell(revision_relation_validation);
+
+                //8
+                table2.addCell(published_api_relation_validation);
+
+                //10,11,12
+                for(int i=0;i<3;i++)
+                {
+                        table2.addCell(tables_content[i+1]);
+                }
+
                 //s4-s10
                 for(int i=0;i<7;i++)
                 {
-                        table.addCell(shared_db_tables_content[i+1]);
+                        table2.addCell(shared_db_tables_content[i+1]);
                 }
 
-                paragraph.add(table);
-                doc.add(paragraph);
+
+
+                paragraph2.add(table2);
+                doc.add(paragraph2);
+
+
+                Paragraph paragraph3 = new Paragraph("3. Data Validation Against Previous Database.");
+
+                PdfPTable table3 = new PdfPTable(1);
+                Stream.of("STATUS").forEach(table3::addCell);
+
+
+
+
+
+
+                paragraph3.add(table3);
+                doc.add(paragraph3);
+
                 doc.close();
         }
         catch (Exception e)

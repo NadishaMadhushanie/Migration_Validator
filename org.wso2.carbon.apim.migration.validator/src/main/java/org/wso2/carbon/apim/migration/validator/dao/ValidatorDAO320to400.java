@@ -170,10 +170,10 @@ public boolean validateAPIMDbUuidContent() {
 
 //5
 
-public boolean checkTableExits(String dbName,String tableName) {
+public boolean checkTableExists(String dbName, String tableName) {
     String result = " ";
 
-    String sqlQuery = SQLConstants.CHECK_TABLES_EXITS;
+    String sqlQuery = SQLConstants.CHECK_TABLES_EXISTS;
 
     Connection conn = null;
     PreparedStatement ps = null;
@@ -507,10 +507,10 @@ public boolean checkRelationVhost() {
     }
 
     //s2
-    public boolean sharedDbCheckTablesExits(String dbName,String tableName) {
+    public boolean sharedDbCheckTablesExists(String dbName, String tableName) {
         String result = " ";
 
-        String sqlQuery = SQLConstants.SHARED_DB_CHECK_TABLES_EXITS;
+        String sqlQuery = SQLConstants.SHARED_DB_CHECK_TABLES_EXISTS;
 
         Connection conn = null;
         PreparedStatement ps = null;

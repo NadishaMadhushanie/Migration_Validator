@@ -3,22 +3,23 @@ package org.wso2.carbon.apim.migration.validator.dao;
 public class SQLConstants {
 
     /*api-m 4.0.0 apim_db*/
-
+//1
     /*table count should be equal to 177    1-apim_db , 2-177*/
     public static String GET_TABLE_COUNT = "SELECT  CASE WHEN (SELECT count(*) AS TOTAL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? )=(?) THEN 'true' ELSE 'false' END AS Result;";
 
+    //2
     /*In AM_API table, if status is published , revision should be created      1-apim_db.AM_API , 2-apim_db.AM_API*/
     /*public static String VALIDATE_REVISION_CREATION = "SELECT CASE WHEN (SELECT count(*) FROM ? WHERE STATUS = 'PUBLISHED' and REVISIONS_CREATED = '1')=(SELECT count(*) FROM ? WHERE STATUS = 'PUBLISHED') THEN 'true' ELSE 'false' END AS Result;";*/
     public static String VALIDATE_REVISION_CREATION = "SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_API WHERE STATUS = 'PUBLISHED' and REVISIONS_CREATED = '1')=(SELECT count(*) FROM apim_db.AM_API WHERE STATUS = 'PUBLISHED') THEN 'true' ELSE 'false' END AS Result;";
 
     /*All the published api’s API_UUID’s should be in the AM_REVISION table.    1-API_UUID , 2-apim_db.AM_API , 3-API_UUID , 4-apim_db.AM_REVISION
     public static String TWO = "SELECT CASE WHEN (select sum(crc32(?)) from ? where STATUS = 'PUBLISHED')=(select sum(crc32(?)) from ?) THEN 'true' ELSE 'false' END AS Result;";*/
-
+//4
     /*all entries in “API_UUID” are not null.   1-apim_db.AM_API , 2-API_UUID*/
     //public static String VALIDATE_API_UUID_CONTENT = "SELECT CASE WHEN (SELECT count(*) FROM ? where ? is null or API_UUID = '')=(0) THEN 'true' ELSE 'false' END AS Result;";
     public static String VALIDATE_API_UUID_CONTENT = "SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_API where API_UUID is null or API_UUID = '')=(0) THEN 'true' ELSE 'false' END AS Result;";
 
-
+//3
 
     /*column count is changed after the migration in some tables
     1-'apim_db' , 2-'AM_API'                    , 3-15
@@ -34,7 +35,8 @@ public class SQLConstants {
                  */
     public static String GET_COLUMN_COUNT = "SELECT CASE WHEN (select count(*) as columns from INFORMATION_SCHEMA.COLUMNS where table_schema = ? and table_name = ?)=(?) THEN 'true' ELSE 'false' END AS Result;";
 
-    /*check whether newly added tables are exits
+    //5
+    /*check whether newly added tables are exists
         1-'apim_db' , 2-'AM_API_SERVICE_MAPPING'
         1-'apim_db' , 2-'AM_DEPLOYMENT_REVISION_MAPPING'
         1-'apim_db' , 2-'AM_GATEWAY_ENVIRONMENT'
@@ -56,7 +58,7 @@ public class SQLConstants {
         1-'apim_db' , 2-'IDN_USER_FUNCTIONALITY_PROPERTY'
         1-'apim_db' , 2-'AM_API_REVISION_METADATA'
     */
-    public static String CHECK_TABLES_EXITS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
+    public static String CHECK_TABLES_EXISTS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
 
     /* 1 to many*/
 
@@ -103,10 +105,10 @@ public class SQLConstants {
 
     //s2
 
-    /*check whether newly added tables are exits
+    /*check whether newly added tables are exists
         1-'shared_db' , 2-'UM_HYBRID_GROUP_ROLE'
      */
-    public static String SHARED_DB_CHECK_TABLES_EXITS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
+    public static String SHARED_DB_CHECK_TABLES_EXISTS ="SELECT CASE WHEN (select count(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?)=(1) THEN 'true' ELSE 'false' END AS Result;";
 
     //s3
 
@@ -139,4 +141,15 @@ public class SQLConstants {
     //s10 s
     public static String SHARED_DB_CHECK_TABLE_CONTENT7 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_HYBRID_GROUP_ROLE )<=(SELECT count(*) FROM shared_db.UM_HYBRID_USER_ROLE) THEN 'true' ELSE 'false' END AS Result;";
 
+
+    /*structural validation
+      1,3,5,9,s1,s2,s3
+
+    table relations validation
+        2,4,6,7,8,10,11,12,s4-s10
+
+    data validation against previous database
+
+
+     */
 }
