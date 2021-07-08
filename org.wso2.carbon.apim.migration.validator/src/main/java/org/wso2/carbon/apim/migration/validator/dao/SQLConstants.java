@@ -1,5 +1,7 @@
 package org.wso2.carbon.apim.migration.validator.dao;
 
+import org.wso2.carbon.apim.migration.validator.fileReader.ReadFile;
+
 public class SQLConstants {
 
     /*api-m 4.0.0 apim_db*/
@@ -140,6 +142,29 @@ public class SQLConstants {
 
     //s10 s
     public static String SHARED_DB_CHECK_TABLE_CONTENT7 ="SELECT CASE WHEN (SELECT count(*) FROM shared_db.UM_HYBRID_GROUP_ROLE )<=(SELECT count(*) FROM shared_db.UM_HYBRID_USER_ROLE) THEN 'true' ELSE 'false' END AS Result;";
+
+
+
+    //
+
+
+    public static String COMPARE_PREVIOUS_DB1 ="SELECT CASE WHEN (select count(*) from apim_db.AM_ALERT_TYPES)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB2 ="SELECT CASE WHEN (select count(*) from apim_db.AM_API)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB3 ="SELECT CASE WHEN (select count(*) from apim_db.AM_API_LC_EVENT)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB4 ="SELECT CASE WHEN (select count(*) from apim_db.AM_API_RATINGS)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB5 ="SELECT CASE WHEN (select count(*) from apim_db.AM_API_THROTTLE_POLICY)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB6 ="SELECT CASE WHEN (select count(*) from apim_db.AM_APPLICATION)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB7 ="SELECT CASE WHEN (select count(*) from apim_db.AM_APPLICATION_KEY_MAPPING)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB8 ="SELECT CASE WHEN (select count(*) from apim_db.AM_APPLICATION_REGISTRATION)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB9 ="SELECT CASE WHEN (select count(*) from apim_db.AM_KEY_MANAGER)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB10 ="SELECT CASE WHEN (select count(*) from apim_db.AM_POLICY_APPLICATION)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB11="SELECT CASE WHEN (select count(*) from apim_db.AM_POLICY_SUBSCRIPTION)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB12 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SUBSCRIBER)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB13 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SUBSCRIPTION)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB14 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SYSTEM_APPS)=(?) THEN 'true' ELSE 'false' END AS Result;";
+
+
+
 
 
     /*structural validation

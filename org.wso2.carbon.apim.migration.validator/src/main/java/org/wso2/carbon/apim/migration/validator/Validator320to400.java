@@ -1,6 +1,8 @@
 package org.wso2.carbon.apim.migration.validator;
 
 import org.wso2.carbon.apim.migration.validator.dao.ValidatorDAO320to400;
+import org.wso2.carbon.apim.migration.validator.fileReader.ReadFile;
+
 import java.util.logging.Logger;
 
 public class Validator320to400 {
@@ -741,5 +743,225 @@ public class Validator320to400 {
         }
 
     }
+
+
+    //previous db
+
+    public static String[] a = ReadFile.readFile();
+
+
+    public static String comparePreviousDb1() {
+
+        int x0 = Integer.parseInt(a[0]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb1 = validate.comparePreviousDB1(x0);
+
+        if (compareDb1) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_ALERT_TYPES table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_ALERT_TYPES table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb2() {
+
+        int x1 = Integer.parseInt(a[1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb2 = validate.comparePreviousDB2(x1);
+
+        if (compareDb2) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_API table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb3() {
+
+        int x2 = Integer.parseInt(a[2]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb3 = validate.comparePreviousDB3(x2);
+
+        if (compareDb3) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API_LC_EVENT table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_API_LC_EVENT table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb4() {
+
+        int x3 = Integer.parseInt(a[3]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb4 = validate.comparePreviousDB4(x3);
+
+        if (compareDb4) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API_RATINGS table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_API_RATINGS table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb5() {
+
+        int x4 = Integer.parseInt(a[4]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb5 = validate.comparePreviousDB5(x4);
+
+        if (compareDb5) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API_THROTTLE_POLICY table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_API_THROTTLE_POLICY table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb6() {
+
+        int x5 = Integer.parseInt(a[5]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb6 = validate.comparePreviousDB6(x5);
+
+        if (compareDb6) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_APPLICATION table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb7() {
+
+        int x6 = Integer.parseInt(a[6]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb7 = validate.comparePreviousDB7(x6);
+
+        if (compareDb7) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION_KEY_MAPPING table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_APPLICATION_KEY_MAPPING table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb8() {
+
+        int x7 = Integer.parseInt(a[7]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb8 = validate.comparePreviousDB8(x7);
+
+        if (compareDb8) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION_REGISTRATION table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_APPLICATION_REGISTRATION table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb9() {
+
+        int x8 = Integer.parseInt(a[8]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb9 = validate.comparePreviousDB9(x8);
+
+        if (compareDb9) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_KEY_MANAGER table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_KEY_MANAGER table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb10() {
+
+        int x9 = Integer.parseInt(a[9]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb10 = validate.comparePreviousDB10(x9);
+
+        if (compareDb10) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_POLICY_APPLICATION table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_POLICY_APPLICATION table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb11() {
+
+        int x10 = Integer.parseInt(a[10]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb11 = validate.comparePreviousDB11(x10);
+
+        if (compareDb11) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_POLICY_SUBSCRIPTION table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_POLICY_SUBSCRIPTION table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb12() {
+
+        int x11 = Integer.parseInt(a[11]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb12 = validate.comparePreviousDB12(x11);
+
+        if (compareDb12) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_SUBSCRIBER table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_SUBSCRIBER table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb13() {
+
+        int x12 = Integer.parseInt(a[12]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb13 = validate.comparePreviousDB13(x12);
+
+        if (compareDb13) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_SUBSCRIPTION table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_SUBSCRIPTION table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb14() {
+
+        int x13 = Integer.parseInt(a[13]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb14 = validate.comparePreviousDB14(x13);
+
+        if (compareDb14) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_SYSTEM_APPS table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_SYSTEM_APPS table content before and after migration validation is fail.";
+        }
+
+    }
+
+
+
+
 
 }
