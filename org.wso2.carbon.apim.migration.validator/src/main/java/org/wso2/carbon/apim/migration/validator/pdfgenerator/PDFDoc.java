@@ -119,10 +119,10 @@ public class PDFDoc {
 
                 log.info("3. Data Validation Against Previous Database.");
 
-                String[] apim_db_compare_previous_db_methods = {Validator320to400.comparePreviousDb1(),Validator320to400.comparePreviousDb2(),Validator320to400.comparePreviousDb3(),Validator320to400.comparePreviousDb4(),Validator320to400.comparePreviousDb5(),Validator320to400.comparePreviousDb6(),Validator320to400.comparePreviousDb7(),Validator320to400.comparePreviousDb8(),Validator320to400.comparePreviousDb9(),Validator320to400.comparePreviousDb10(),Validator320to400.comparePreviousDb11(),Validator320to400.comparePreviousDb12(),Validator320to400.comparePreviousDb13(),Validator320to400.comparePreviousDb14()};
+                String[] apim_db_compare_previous_db_methods = {Validator320to400.comparePreviousDb1(),Validator320to400.comparePreviousDb2(),Validator320to400.comparePreviousDb3(),Validator320to400.comparePreviousDb4(),Validator320to400.comparePreviousDb5(),Validator320to400.comparePreviousDb6(),Validator320to400.comparePreviousDb7(),Validator320to400.comparePreviousDb8(),Validator320to400.comparePreviousDb9(),Validator320to400.comparePreviousDb10(),Validator320to400.comparePreviousDb11(),Validator320to400.comparePreviousDb12(),Validator320to400.comparePreviousDb13(),Validator320to400.comparePreviousDb14(),Validator320to400.comparePreviousDb15(),Validator320to400.comparePreviousDb16(),Validator320to400.comparePreviousDb17(),Validator320to400.comparePreviousDb18(),Validator320to400.comparePreviousDb19(),Validator320to400.comparePreviousDb20(),Validator320to400.comparePreviousDb21(),Validator320to400.comparePreviousDb22(),Validator320to400.comparePreviousDb23(),Validator320to400.comparePreviousDb24(),Validator320to400.comparePreviousDb25(),Validator320to400.comparePreviousDb26(),Validator320to400.comparePreviousDb27(),Validator320to400.comparePreviousDb28(),Validator320to400.comparePreviousDb29(),Validator320to400.comparePreviousDb30(),Validator320to400.comparePreviousDb31(),Validator320to400.comparePreviousDb32(),Validator320to400.comparePreviousDb33(),Validator320to400.comparePreviousDb34(),Validator320to400.comparePreviousDb35(),Validator320to400.comparePreviousDb36(),Validator320to400.comparePreviousDb37(),Validator320to400.comparePreviousDb38(),Validator320to400.comparePreviousDb39()};
                 String[] apim_db_compare_previous_db = new String[100];
 
-                for(int i=0;i<14;i++)
+                for(int i=0;i<apim_db_compare_previous_db_methods.length;i++)
                 {
                         apim_db_compare_previous_db[i+1] = apim_db_compare_previous_db_methods[i];
                         log.info(apim_db_compare_previous_db[i+1]);
@@ -220,7 +220,7 @@ public class PDFDoc {
                 //compare with previous db
 
 
-                for(int i=0;i<14;i++)
+                for(int i=0;i<apim_db_compare_previous_db_methods.length;i++)
                 {
                         table3.addCell(apim_db_compare_previous_db[i+1]);
                 }

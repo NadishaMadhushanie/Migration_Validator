@@ -164,7 +164,31 @@ public class SQLConstants {
     public static String COMPARE_PREVIOUS_DB14 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SYSTEM_APPS)=(?) THEN 'true' ELSE 'false' END AS Result;";
 
 
-
+    public static String COMPARE_PREVIOUS_DB15 ="SELECT CASE WHEN (select count(*) from apim_db.CM_PURPOSE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB16 ="SELECT CASE WHEN (select count(*) from apim_db.CM_PURPOSE_CATEGORY)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB17 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_AUTH_SESSION_APP_INFO)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB18 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_AUTH_SESSION_META_DATA)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB19 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_AUTH_SESSION_STORE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB20 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_AUTH_TEMP_SESSION_STORE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB21 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_AUTH_USER_SESSION_MAPPING)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB22 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_BASE_TABLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB23 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_CLAIM_DIALECT)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB24 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH2_ACCESS_TOKEN)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB25 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH2_ACCESS_TOKEN_SCOPE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB26 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH2_AUTHORIZATION_CODE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB27 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH2_AUTHZ_CODE_SCOPE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB28 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH2_SCOPE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB29 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH2_SCOPE_BINDING)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB30 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OAUTH_CONSUMER_APPS)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB31 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OIDC_PROPERTY)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB32 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_OIDC_SCOPE_CLAIM_MAPPING)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB33 ="SELECT CASE WHEN (select count(*) from apim_db.IDP)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB34 ="SELECT CASE WHEN (select count(*) from apim_db.IDP_AUTHENTICATOR)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB35 ="SELECT CASE WHEN (select count(*) from apim_db.IDP_AUTHENTICATOR_PROPERTY)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB36 ="SELECT CASE WHEN (select count(*) from apim_db.IDP_METADATA)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB37 ="SELECT CASE WHEN (select count(*) from apim_db.SP_APP)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB38 ="SELECT CASE WHEN (select count(*) from apim_db.SP_INBOUND_AUTH)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB39 ="SELECT CASE WHEN (select count(*) from apim_db.SP_METADATA)=(?) THEN 'true' ELSE 'false' END AS Result;";
 
 
     /*structural validation

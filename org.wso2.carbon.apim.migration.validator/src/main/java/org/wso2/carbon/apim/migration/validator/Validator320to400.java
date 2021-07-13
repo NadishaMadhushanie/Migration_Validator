@@ -747,12 +747,12 @@ public class Validator320to400 {
 
     //previous db
 
-    public static String[] a = ReadFile.readFile();
+    public static String[][] a = ReadFile.readFile();
 
 
     public static String comparePreviousDb1() {
 
-        int x0 = Integer.parseInt(a[0]);
+        int x0 = Integer.parseInt(a[0][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb1 = validate.comparePreviousDB1(x0);
@@ -767,7 +767,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb2() {
 
-        int x1 = Integer.parseInt(a[1]);
+        int x1 = Integer.parseInt(a[1][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb2 = validate.comparePreviousDB2(x1);
@@ -782,7 +782,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb3() {
 
-        int x2 = Integer.parseInt(a[2]);
+        int x2 = Integer.parseInt(a[2][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb3 = validate.comparePreviousDB3(x2);
@@ -797,7 +797,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb4() {
 
-        int x3 = Integer.parseInt(a[3]);
+        int x3 = Integer.parseInt(a[3][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb4 = validate.comparePreviousDB4(x3);
@@ -812,7 +812,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb5() {
 
-        int x4 = Integer.parseInt(a[4]);
+        int x4 = Integer.parseInt(a[4][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb5 = validate.comparePreviousDB5(x4);
@@ -827,7 +827,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb6() {
 
-        int x5 = Integer.parseInt(a[5]);
+        int x5 = Integer.parseInt(a[5][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb6 = validate.comparePreviousDB6(x5);
@@ -842,7 +842,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb7() {
 
-        int x6 = Integer.parseInt(a[6]);
+        int x6 = Integer.parseInt(a[6][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb7 = validate.comparePreviousDB7(x6);
@@ -857,7 +857,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb8() {
 
-        int x7 = Integer.parseInt(a[7]);
+        int x7 = Integer.parseInt(a[7][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb8 = validate.comparePreviousDB8(x7);
@@ -872,7 +872,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb9() {
 
-        int x8 = Integer.parseInt(a[8]);
+        int x8 = Integer.parseInt(a[8][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb9 = validate.comparePreviousDB9(x8);
@@ -887,7 +887,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb10() {
 
-        int x9 = Integer.parseInt(a[9]);
+        int x9 = Integer.parseInt(a[9][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb10 = validate.comparePreviousDB10(x9);
@@ -902,7 +902,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb11() {
 
-        int x10 = Integer.parseInt(a[10]);
+        int x10 = Integer.parseInt(a[10][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb11 = validate.comparePreviousDB11(x10);
@@ -917,7 +917,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb12() {
 
-        int x11 = Integer.parseInt(a[11]);
+        int x11 = Integer.parseInt(a[11][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb12 = validate.comparePreviousDB12(x11);
@@ -932,7 +932,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb13() {
 
-        int x12 = Integer.parseInt(a[12]);
+        int x12 = Integer.parseInt(a[12][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb13 = validate.comparePreviousDB13(x12);
@@ -947,7 +947,7 @@ public class Validator320to400 {
 
     public static String comparePreviousDb14() {
 
-        int x13 = Integer.parseInt(a[13]);
+        int x13 = Integer.parseInt(a[13][1]);
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
         boolean compareDb14 = validate.comparePreviousDB14(x13);
@@ -960,8 +960,355 @@ public class Validator320to400 {
 
     }
 
+    public static String comparePreviousDb15() {
 
+        int x14 = Integer.parseInt(a[14][1]);
 
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb15 = validate.comparePreviousDB15(x14);
 
+        if (compareDb15) {
+            return " * 3.2.0 to 4.0.0 apim_db CM_PURPOSE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db CM_PURPOSE table content before and after migration validation is fail.";
+        }
+
+    }
+
+    public static String comparePreviousDb16() {
+
+        int x15 = Integer.parseInt(a[15][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb16 = validate.comparePreviousDB16(x15);
+
+        if (compareDb16) {
+            return " * 3.2.0 to 4.0.0 apim_db CM_PURPOSE_CATEGORY table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db CM_PURPOSE_CATEGORY table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb17() {
+
+        int x16 = Integer.parseInt(a[16][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb17 = validate.comparePreviousDB17(x16);
+
+        if (compareDb17) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_APP_INFO table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_APP_INFO table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb18() {
+
+        int x17 = Integer.parseInt(a[17][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb18 = validate.comparePreviousDB18(x17);
+
+        if (compareDb18) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_META_DATA table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_META_DATA table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb19() {
+
+        int x18 = Integer.parseInt(a[18][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb19 = validate.comparePreviousDB19(x18);
+
+        if (compareDb19) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_STORE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_STORE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb20() {
+
+        int x19 = Integer.parseInt(a[19][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb20 = validate.comparePreviousDB20(x19);
+
+        if (compareDb20) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_TEMP_SESSION_STORE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_AUTH_TEMP_SESSION_STORE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb21() {
+
+        int x20 = Integer.parseInt(a[20][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb21 = validate.comparePreviousDB21(x20);
+
+        if (compareDb21) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_USER_SESSION_MAPPING table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_AUTH_USER_SESSION_MAPPING table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb22() {
+
+        int x21 = Integer.parseInt(a[21][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb22 = validate.comparePreviousDB22(x21);
+
+        if (compareDb22) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_BASE_TABLE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_BASE_TABLE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb23() {
+
+        int x22 = Integer.parseInt(a[22][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb23 = validate.comparePreviousDB23(x22);
+
+        if (compareDb23) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_CLAIM_DIALECT table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_CLAIM_DIALECT table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb24() {
+
+        int x23 = Integer.parseInt(a[23][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb24 = validate.comparePreviousDB24(x23);
+
+        if (compareDb24) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_ACCESS_TOKEN table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH2_ACCESS_TOKEN table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb25() {
+
+        int x24 = Integer.parseInt(a[24][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb25 = validate.comparePreviousDB25(x24);
+
+        if (compareDb25) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_ACCESS_TOKEN_SCOPE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH2_ACCESS_TOKEN_SCOPE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb26() {
+
+        int x25 = Integer.parseInt(a[25][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb26 = validate.comparePreviousDB26(x25);
+
+        if (compareDb26) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_AUTHORIZATION_CODE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH2_AUTHORIZATION_CODE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb27() {
+
+        int x26 = Integer.parseInt(a[26][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb27 = validate.comparePreviousDB27(x26);
+
+        if (compareDb27) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_AUTHZ_CODE_SCOPE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH2_AUTHZ_CODE_SCOPE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb28() {
+
+        int x27 = Integer.parseInt(a[27][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb28 = validate.comparePreviousDB28(x27);
+
+        if (compareDb28) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_SCOPE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH2_SCOPE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb29() {
+
+        int x28 = Integer.parseInt(a[28][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb29 = validate.comparePreviousDB29(x28);
+
+        if (compareDb29) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_SCOPE_BINDING table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH2_SCOPE_BINDING table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb30() {
+
+        int x29 = Integer.parseInt(a[29][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb30 = validate.comparePreviousDB30(x29);
+
+        if (compareDb30) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH_CONSUMER_APPS table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OAUTH_CONSUMER_APPS table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb31() {
+
+        int x30 = Integer.parseInt(a[30][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb31 = validate.comparePreviousDB31(x30);
+
+        if (compareDb31) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OIDC_PROPERTY table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OIDC_PROPERTY table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb32() {
+
+        int x31 = Integer.parseInt(a[31][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb32 = validate.comparePreviousDB32(x31);
+
+        if (compareDb32) {
+            return " * 3.2.0 to 4.0.0 apim_db IDN_OIDC_SCOPE_CLAIM_MAPPING table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDN_OIDC_SCOPE_CLAIM_MAPPING table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb33() {
+
+        int x32 = Integer.parseInt(a[32][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb33 = validate.comparePreviousDB33(x32);
+
+        if (compareDb33) {
+            return " * 3.2.0 to 4.0.0 apim_db IDP table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDP table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb34() {
+
+        int x33 = Integer.parseInt(a[33][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb34 = validate.comparePreviousDB34(x33);
+
+        if (compareDb34) {
+            return " * 3.2.0 to 4.0.0 apim_db IDP_AUTHENTICATOR table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDP_AUTHENTICATOR table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb35() {
+
+        int x34 = Integer.parseInt(a[34][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb35 = validate.comparePreviousDB35(x34);
+
+        if (compareDb35) {
+            return " * 3.2.0 to 4.0.0 apim_db IDP_AUTHENTICATOR_PROPERTY table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDP_AUTHENTICATOR_PROPERTY table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb36() {
+
+        int x35 = Integer.parseInt(a[35][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb36 = validate.comparePreviousDB36(x35);
+
+        if (compareDb36) {
+            return " * 3.2.0 to 4.0.0 apim_db IDP_METADATA table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db IDP_METADATA table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb37() {
+
+        int x36 = Integer.parseInt(a[36][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb37 = validate.comparePreviousDB37(x36);
+
+        if (compareDb37) {
+            return " * 3.2.0 to 4.0.0 apim_db SP_APP table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db SP_APP table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb38() {
+
+        int x37 = Integer.parseInt(a[37][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb38 = validate.comparePreviousDB38(x37);
+
+        if (compareDb38) {
+            return " * 3.2.0 to 4.0.0 apim_db SP_INBOUND_AUTH table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db SP_INBOUND_AUTH table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb39() {
+
+        int x38 = Integer.parseInt(a[38][1]);
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb39 = validate.comparePreviousDB39(x38);
+
+        if (compareDb39) {
+            return " * 3.2.0 to 4.0.0 apim_db SP_METADATA table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db SP_METADATA table content before and after migration validation is fail.";
+        }
+    }
 
 }

@@ -1,12 +1,8 @@
 package org.wso2.carbon.apim.migration.validator.fileReader;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
+import java.io.*;
+import java.util.*;
+/*
 public class ReadFile {
     public static String[] readFile()
     {
@@ -30,4 +26,27 @@ public class ReadFile {
         return count;
     }
 
+}*/
+public class ReadFile {
+    public static String[][] readFile() {
+        String count[][] = new String[100][100];
+
+        try (BufferedReader in = new BufferedReader(new FileReader("/usr/local/test/output.txt"))) {
+            String str;
+
+            int i = 0;
+            int j = 0;
+            while ((str = in.readLine()) != null) {
+                String[] tokens = str.split(",");
+
+                count[i][j] = tokens[0];
+                count[i][j + 1] = tokens[1];
+                i++;
+            }
+        } catch (IOException e) {
+            System.out.println("File Read Error");
+        }
+
+        return count;
+    }
 }
