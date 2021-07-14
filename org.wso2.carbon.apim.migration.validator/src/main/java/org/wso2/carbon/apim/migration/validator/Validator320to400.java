@@ -3,6 +3,8 @@ package org.wso2.carbon.apim.migration.validator;
 import org.wso2.carbon.apim.migration.validator.dao.ValidatorDAO320to400;
 import org.wso2.carbon.apim.migration.validator.fileReader.ReadFile;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 
 public class Validator320to400 {
@@ -747,15 +749,18 @@ public class Validator320to400 {
 
     //previous db
 
-    public static String[][] a = ReadFile.readFile();
-
+    //public static String[][] a = ReadFile.readFile();
 
     public static String comparePreviousDb1() {
 
-        int x0 = Integer.parseInt(a[0][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x1 = Integer.parseInt(map1.get("am_alert_types"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb1 = validate.comparePreviousDB1(x0);
+        boolean compareDb1 = validate.comparePreviousDB1(x1);
 
         if (compareDb1) {
             return " * 3.2.0 to 4.0.0 apim_db AM_ALERT_TYPES table content before and after migration validation is successful.";
@@ -767,10 +772,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb2() {
 
-        int x1 = Integer.parseInt(a[1][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x2 = Integer.parseInt(map1.get("am_api"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb2 = validate.comparePreviousDB2(x1);
+        boolean compareDb2 = validate.comparePreviousDB2(x2);
 
         if (compareDb2) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API table content before and after migration validation is successful.";
@@ -782,10 +791,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb3() {
 
-        int x2 = Integer.parseInt(a[2][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x3 = Integer.parseInt(map1.get("am_api_lc_event"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb3 = validate.comparePreviousDB3(x2);
+        boolean compareDb3 = validate.comparePreviousDB3(x3);
 
         if (compareDb3) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_LC_EVENT table content before and after migration validation is successful.";
@@ -797,10 +810,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb4() {
 
-        int x3 = Integer.parseInt(a[3][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x4 = Integer.parseInt(map1.get("am_api_ratings"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb4 = validate.comparePreviousDB4(x3);
+        boolean compareDb4 = validate.comparePreviousDB4(x4);
 
         if (compareDb4) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_RATINGS table content before and after migration validation is successful.";
@@ -812,10 +829,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb5() {
 
-        int x4 = Integer.parseInt(a[4][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x5 = Integer.parseInt(map1.get("am_api_throttle_policy"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb5 = validate.comparePreviousDB5(x4);
+        boolean compareDb5 = validate.comparePreviousDB5(x5);
 
         if (compareDb5) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_THROTTLE_POLICY table content before and after migration validation is successful.";
@@ -827,10 +848,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb6() {
 
-        int x5 = Integer.parseInt(a[5][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x6 = Integer.parseInt(map1.get("am_application"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb6 = validate.comparePreviousDB6(x5);
+        boolean compareDb6 = validate.comparePreviousDB6(x6);
 
         if (compareDb6) {
             return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION table content before and after migration validation is successful.";
@@ -842,10 +867,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb7() {
 
-        int x6 = Integer.parseInt(a[6][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x7 = Integer.parseInt(map1.get("am_application_key_mapping"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb7 = validate.comparePreviousDB7(x6);
+        boolean compareDb7 = validate.comparePreviousDB7(x7);
 
         if (compareDb7) {
             return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION_KEY_MAPPING table content before and after migration validation is successful.";
@@ -857,10 +886,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb8() {
 
-        int x7 = Integer.parseInt(a[7][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x8 = Integer.parseInt(map1.get("am_application_registration"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb8 = validate.comparePreviousDB8(x7);
+        boolean compareDb8 = validate.comparePreviousDB8(x8);
 
         if (compareDb8) {
             return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION_REGISTRATION table content before and after migration validation is successful.";
@@ -872,10 +905,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb9() {
 
-        int x8 = Integer.parseInt(a[8][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x9 = Integer.parseInt(map1.get("am_key_manager"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb9 = validate.comparePreviousDB9(x8);
+        boolean compareDb9 = validate.comparePreviousDB9(x9);
 
         if (compareDb9) {
             return " * 3.2.0 to 4.0.0 apim_db AM_KEY_MANAGER table content before and after migration validation is successful.";
@@ -887,10 +924,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb10() {
 
-        int x9 = Integer.parseInt(a[9][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x10 = Integer.parseInt(map1.get("am_policy_application"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb10 = validate.comparePreviousDB10(x9);
+        boolean compareDb10 = validate.comparePreviousDB10(x10);
 
         if (compareDb10) {
             return " * 3.2.0 to 4.0.0 apim_db AM_POLICY_APPLICATION table content before and after migration validation is successful.";
@@ -902,10 +943,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb11() {
 
-        int x10 = Integer.parseInt(a[10][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x11 = Integer.parseInt(map1.get("am_policy_subscription"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb11 = validate.comparePreviousDB11(x10);
+        boolean compareDb11 = validate.comparePreviousDB11(x11);
 
         if (compareDb11) {
             return " * 3.2.0 to 4.0.0 apim_db AM_POLICY_SUBSCRIPTION table content before and after migration validation is successful.";
@@ -917,10 +962,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb12() {
 
-        int x11 = Integer.parseInt(a[11][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x12 = Integer.parseInt(map1.get("am_subscriber"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb12 = validate.comparePreviousDB12(x11);
+        boolean compareDb12 = validate.comparePreviousDB12(x12);
 
         if (compareDb12) {
             return " * 3.2.0 to 4.0.0 apim_db AM_SUBSCRIBER table content before and after migration validation is successful.";
@@ -932,10 +981,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb13() {
 
-        int x12 = Integer.parseInt(a[12][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x13 = Integer.parseInt(map1.get("am_subscription"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb13 = validate.comparePreviousDB13(x12);
+        boolean compareDb13 = validate.comparePreviousDB13(x13);
 
         if (compareDb13) {
             return " * 3.2.0 to 4.0.0 apim_db AM_SUBSCRIPTION table content before and after migration validation is successful.";
@@ -947,10 +1000,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb14() {
 
-        int x13 = Integer.parseInt(a[13][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x14 = Integer.parseInt(map1.get("am_system_apps"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb14 = validate.comparePreviousDB14(x13);
+        boolean compareDb14 = validate.comparePreviousDB14(x14);
 
         if (compareDb14) {
             return " * 3.2.0 to 4.0.0 apim_db AM_SYSTEM_APPS table content before and after migration validation is successful.";
@@ -962,10 +1019,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb15() {
 
-        int x14 = Integer.parseInt(a[14][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x15 = Integer.parseInt(map1.get("cm_purpose"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb15 = validate.comparePreviousDB15(x14);
+        boolean compareDb15 = validate.comparePreviousDB15(x15);
 
         if (compareDb15) {
             return " * 3.2.0 to 4.0.0 apim_db CM_PURPOSE table content before and after migration validation is successful.";
@@ -977,10 +1038,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb16() {
 
-        int x15 = Integer.parseInt(a[15][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x16 = Integer.parseInt(map1.get("cm_purpose_category"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb16 = validate.comparePreviousDB16(x15);
+        boolean compareDb16 = validate.comparePreviousDB16(x16);
 
         if (compareDb16) {
             return " * 3.2.0 to 4.0.0 apim_db CM_PURPOSE_CATEGORY table content before and after migration validation is successful.";
@@ -991,10 +1056,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb17() {
 
-        int x16 = Integer.parseInt(a[16][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x17 = Integer.parseInt(map1.get("idn_auth_session_app_info"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb17 = validate.comparePreviousDB17(x16);
+        boolean compareDb17 = validate.comparePreviousDB17(x17);
 
         if (compareDb17) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_APP_INFO table content before and after migration validation is successful.";
@@ -1005,10 +1074,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb18() {
 
-        int x17 = Integer.parseInt(a[17][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x18 = Integer.parseInt(map1.get("idn_auth_session_meta_data"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb18 = validate.comparePreviousDB18(x17);
+        boolean compareDb18 = validate.comparePreviousDB18(x18);
 
         if (compareDb18) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_META_DATA table content before and after migration validation is successful.";
@@ -1019,10 +1092,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb19() {
 
-        int x18 = Integer.parseInt(a[18][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x19 = Integer.parseInt(map1.get("idn_auth_session_store"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb19 = validate.comparePreviousDB19(x18);
+        boolean compareDb19 = validate.comparePreviousDB19(x19);
 
         if (compareDb19) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_SESSION_STORE table content before and after migration validation is successful.";
@@ -1033,10 +1110,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb20() {
 
-        int x19 = Integer.parseInt(a[19][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x20 = Integer.parseInt(map1.get("idn_auth_temp_session_store"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb20 = validate.comparePreviousDB20(x19);
+        boolean compareDb20 = validate.comparePreviousDB20(x20);
 
         if (compareDb20) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_TEMP_SESSION_STORE table content before and after migration validation is successful.";
@@ -1047,10 +1128,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb21() {
 
-        int x20 = Integer.parseInt(a[20][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x21 = Integer.parseInt(map1.get("idn_auth_user_session_mapping"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb21 = validate.comparePreviousDB21(x20);
+        boolean compareDb21 = validate.comparePreviousDB21(x21);
 
         if (compareDb21) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_AUTH_USER_SESSION_MAPPING table content before and after migration validation is successful.";
@@ -1061,10 +1146,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb22() {
 
-        int x21 = Integer.parseInt(a[21][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x22 = Integer.parseInt(map1.get("idn_base_table"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb22 = validate.comparePreviousDB22(x21);
+        boolean compareDb22 = validate.comparePreviousDB22(x22);
 
         if (compareDb22) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_BASE_TABLE table content before and after migration validation is successful.";
@@ -1075,10 +1164,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb23() {
 
-        int x22 = Integer.parseInt(a[22][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x23 = Integer.parseInt(map1.get("idn_claim_dialect"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb23 = validate.comparePreviousDB23(x22);
+        boolean compareDb23 = validate.comparePreviousDB23(x23);
 
         if (compareDb23) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CLAIM_DIALECT table content before and after migration validation is successful.";
@@ -1089,10 +1182,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb24() {
 
-        int x23 = Integer.parseInt(a[23][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x24 = Integer.parseInt(map1.get("idn_oauth2_access_token"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb24 = validate.comparePreviousDB24(x23);
+        boolean compareDb24 = validate.comparePreviousDB24(x24);
 
         if (compareDb24) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_ACCESS_TOKEN table content before and after migration validation is successful.";
@@ -1103,10 +1200,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb25() {
 
-        int x24 = Integer.parseInt(a[24][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x25 = Integer.parseInt(map1.get("idn_oauth2_access_token_scope"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb25 = validate.comparePreviousDB25(x24);
+        boolean compareDb25 = validate.comparePreviousDB25(x25);
 
         if (compareDb25) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_ACCESS_TOKEN_SCOPE table content before and after migration validation is successful.";
@@ -1117,10 +1218,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb26() {
 
-        int x25 = Integer.parseInt(a[25][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x26 = Integer.parseInt(map1.get("idn_oauth2_authorization_code"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb26 = validate.comparePreviousDB26(x25);
+        boolean compareDb26 = validate.comparePreviousDB26(x26);
 
         if (compareDb26) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_AUTHORIZATION_CODE table content before and after migration validation is successful.";
@@ -1131,10 +1236,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb27() {
 
-        int x26 = Integer.parseInt(a[26][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x27 = Integer.parseInt(map1.get("idn_oauth2_authz_code_scope"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb27 = validate.comparePreviousDB27(x26);
+        boolean compareDb27 = validate.comparePreviousDB27(x27);
 
         if (compareDb27) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_AUTHZ_CODE_SCOPE table content before and after migration validation is successful.";
@@ -1145,10 +1254,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb28() {
 
-        int x27 = Integer.parseInt(a[27][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x28 = Integer.parseInt(map1.get("idn_oauth2_scope"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb28 = validate.comparePreviousDB28(x27);
+        boolean compareDb28 = validate.comparePreviousDB28(x28);
 
         if (compareDb28) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_SCOPE table content before and after migration validation is successful.";
@@ -1159,10 +1272,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb29() {
 
-        int x28 = Integer.parseInt(a[28][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x29 = Integer.parseInt(map1.get("idn_oauth2_scope_binding"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb29 = validate.comparePreviousDB29(x28);
+        boolean compareDb29 = validate.comparePreviousDB29(x29);
 
         if (compareDb29) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH2_SCOPE_BINDING table content before and after migration validation is successful.";
@@ -1173,10 +1290,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb30() {
 
-        int x29 = Integer.parseInt(a[29][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x30 = Integer.parseInt(map1.get("idn_oauth_consumer_apps"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb30 = validate.comparePreviousDB30(x29);
+        boolean compareDb30 = validate.comparePreviousDB30(x30);
 
         if (compareDb30) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OAUTH_CONSUMER_APPS table content before and after migration validation is successful.";
@@ -1187,10 +1308,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb31() {
 
-        int x30 = Integer.parseInt(a[30][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x31 = Integer.parseInt(map1.get("idn_oidc_property"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb31 = validate.comparePreviousDB31(x30);
+        boolean compareDb31 = validate.comparePreviousDB31(x31);
 
         if (compareDb31) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OIDC_PROPERTY table content before and after migration validation is successful.";
@@ -1201,10 +1326,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb32() {
 
-        int x31 = Integer.parseInt(a[31][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x32 = Integer.parseInt(map1.get("idn_oidc_scope_claim_mapping"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb32 = validate.comparePreviousDB32(x31);
+        boolean compareDb32 = validate.comparePreviousDB32(x32);
 
         if (compareDb32) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_OIDC_SCOPE_CLAIM_MAPPING table content before and after migration validation is successful.";
@@ -1215,10 +1344,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb33() {
 
-        int x32 = Integer.parseInt(a[32][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x33 = Integer.parseInt(map1.get("idp"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb33 = validate.comparePreviousDB33(x32);
+        boolean compareDb33 = validate.comparePreviousDB33(x33);
 
         if (compareDb33) {
             return " * 3.2.0 to 4.0.0 apim_db IDP table content before and after migration validation is successful.";
@@ -1229,10 +1362,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb34() {
 
-        int x33 = Integer.parseInt(a[33][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x34 = Integer.parseInt(map1.get("idp_authenticator"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb34 = validate.comparePreviousDB34(x33);
+        boolean compareDb34 = validate.comparePreviousDB34(x34);
 
         if (compareDb34) {
             return " * 3.2.0 to 4.0.0 apim_db IDP_AUTHENTICATOR table content before and after migration validation is successful.";
@@ -1243,10 +1380,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb35() {
 
-        int x34 = Integer.parseInt(a[34][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x35 = Integer.parseInt(map1.get("idp_authenticator_property"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb35 = validate.comparePreviousDB35(x34);
+        boolean compareDb35 = validate.comparePreviousDB35(x35);
 
         if (compareDb35) {
             return " * 3.2.0 to 4.0.0 apim_db IDP_AUTHENTICATOR_PROPERTY table content before and after migration validation is successful.";
@@ -1257,10 +1398,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb36() {
 
-        int x35 = Integer.parseInt(a[35][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x36 = Integer.parseInt(map1.get("idp_metadata"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb36 = validate.comparePreviousDB36(x35);
+        boolean compareDb36 = validate.comparePreviousDB36(x36);
 
         if (compareDb36) {
             return " * 3.2.0 to 4.0.0 apim_db IDP_METADATA table content before and after migration validation is successful.";
@@ -1271,10 +1416,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb37() {
 
-        int x36 = Integer.parseInt(a[36][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x37 = Integer.parseInt(map1.get("sp_app"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb37 = validate.comparePreviousDB37(x36);
+        boolean compareDb37 = validate.comparePreviousDB37(x37);
 
         if (compareDb37) {
             return " * 3.2.0 to 4.0.0 apim_db SP_APP table content before and after migration validation is successful.";
@@ -1285,10 +1434,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb38() {
 
-        int x37 = Integer.parseInt(a[37][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x38 = Integer.parseInt(map1.get("sp_inbound_auth"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb38 = validate.comparePreviousDB38(x37);
+        boolean compareDb38 = validate.comparePreviousDB38(x38);
 
         if (compareDb38) {
             return " * 3.2.0 to 4.0.0 apim_db SP_INBOUND_AUTH table content before and after migration validation is successful.";
@@ -1299,10 +1452,14 @@ public class Validator320to400 {
 
     public static String comparePreviousDb39() {
 
-        int x38 = Integer.parseInt(a[38][1]);
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x39 = Integer.parseInt(map1.get("sp_metadata"));
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean compareDb39 = validate.comparePreviousDB39(x38);
+        boolean compareDb39 = validate.comparePreviousDB39(x39);
 
         if (compareDb39) {
             return " * 3.2.0 to 4.0.0 apim_db SP_METADATA table content before and after migration validation is successful.";
