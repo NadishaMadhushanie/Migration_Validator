@@ -837,6 +837,7 @@ public boolean checkRelationVhost() {
     }
 
 //previous db
+//count validation.
 
     public boolean comparePreviousDB1(int tableCount) {
         String result = " ";
@@ -2242,9 +2243,402 @@ public boolean checkRelationVhost() {
         }
     }
 
+    public boolean comparePreviousDB40(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB40;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
 
 
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDB41(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB41;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
 
 
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDB42(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB42;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDB43(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB43;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDB44(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB44;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDB45(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB45;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDB46(int tableCount) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB46;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setInt(1,tableCount);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+//content validation.
+
+    public boolean comparePreviousDBContent1(String sum) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB_CONTENT1;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setString(1,sum);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDBContent2(String sum) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB_CONTENT2;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setString(1,sum);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDBContent3(String sum) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB_CONTENT3;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setString(1,sum);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comparePreviousDBContent4(String sum) {
+        String result = " ";
+
+        String sqlQuery = SQLConstants.COMPARE_PREVIOUS_DB_CONTENT4;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        List<String> versionList = new ArrayList<String>();
+        ResultSet resultSet = null;
+
+        try {
+            conn = APIMgtDBUtil.getConnection();
+            ps = conn.prepareStatement(sqlQuery);
+            ps.setString(1,sum);
+            resultSet = ps.executeQuery();
+
+
+            if (resultSet.next()) {
+                result = resultSet.getString("Result");
+            }
+
+        } catch (SQLException e) {
+            //TODO
+            System.out.println(e.getMessage());
+
+        } finally {
+            APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
+        }
+
+        if (result.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

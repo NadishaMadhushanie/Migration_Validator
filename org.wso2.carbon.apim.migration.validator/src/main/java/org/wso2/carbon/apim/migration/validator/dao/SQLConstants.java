@@ -1,6 +1,5 @@
 package org.wso2.carbon.apim.migration.validator.dao;
 
-import org.wso2.carbon.apim.migration.validator.fileReader.ReadFile;
 
 public class SQLConstants {
 
@@ -9,13 +8,14 @@ public class SQLConstants {
     /*table count should be equal to 177    1-apim_db , 2-177*/
     public static String GET_TABLE_COUNT = "SELECT  CASE WHEN (SELECT count(*) AS TOTAL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ? )=(?) THEN 'true' ELSE 'false' END AS Result;";
 
-    //2
+//2
     /*In AM_API table, if status is published , revision should be created      1-apim_db.AM_API , 2-apim_db.AM_API*/
     /*public static String VALIDATE_REVISION_CREATION = "SELECT CASE WHEN (SELECT count(*) FROM ? WHERE STATUS = 'PUBLISHED' and REVISIONS_CREATED = '1')=(SELECT count(*) FROM ? WHERE STATUS = 'PUBLISHED') THEN 'true' ELSE 'false' END AS Result;";*/
     public static String VALIDATE_REVISION_CREATION = "SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_API WHERE STATUS = 'PUBLISHED' and REVISIONS_CREATED = '1')=(SELECT count(*) FROM apim_db.AM_API WHERE STATUS = 'PUBLISHED') THEN 'true' ELSE 'false' END AS Result;";
 
     /*All the published api’s API_UUID’s should be in the AM_REVISION table.    1-API_UUID , 2-apim_db.AM_API , 3-API_UUID , 4-apim_db.AM_REVISION
     public static String TWO = "SELECT CASE WHEN (select sum(crc32(?)) from ? where STATUS = 'PUBLISHED')=(select sum(crc32(?)) from ?) THEN 'true' ELSE 'false' END AS Result;";*/
+
 //4
     /*all entries in “API_UUID” are not null.   1-apim_db.AM_API , 2-API_UUID*/
     //public static String VALIDATE_API_UUID_CONTENT = "SELECT CASE WHEN (SELECT count(*) FROM ? where ? is null or API_UUID = '')=(0) THEN 'true' ELSE 'false' END AS Result;";
@@ -37,7 +37,7 @@ public class SQLConstants {
                  */
     public static String GET_COLUMN_COUNT = "SELECT CASE WHEN (select count(*) as columns from INFORMATION_SCHEMA.COLUMNS where table_schema = ? and table_name = ?)=(?) THEN 'true' ELSE 'false' END AS Result;";
 
-    //5
+ //5
     /*check whether newly added tables are exists
         1-'apim_db' , 2-'AM_API_SERVICE_MAPPING'
         1-'apim_db' , 2-'AM_DEPLOYMENT_REVISION_MAPPING'
@@ -145,8 +145,9 @@ public class SQLConstants {
 
 
 
-    //
+    //compare with previous database
 
+//count validation
 
     public static String COMPARE_PREVIOUS_DB1 ="SELECT CASE WHEN (select count(*) from apim_db.AM_ALERT_TYPES)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB2 ="SELECT CASE WHEN (select count(*) from apim_db.AM_API)=(?) THEN 'true' ELSE 'false' END AS Result;";
@@ -190,15 +191,31 @@ public class SQLConstants {
     public static String COMPARE_PREVIOUS_DB38 ="SELECT CASE WHEN (select count(*) from apim_db.SP_INBOUND_AUTH)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB39 ="SELECT CASE WHEN (select count(*) from apim_db.SP_METADATA)=(?) THEN 'true' ELSE 'false' END AS Result;";
 
+    public static String COMPARE_PREVIOUS_DB40 ="SELECT CASE WHEN (select count(*) from shared_db.REG_ASSOCIATION)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB41 ="SELECT CASE WHEN (select count(*) from shared_db.UM_DOMAIN)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB42 ="SELECT CASE WHEN (select count(*) from shared_db.UM_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB43 ="SELECT CASE WHEN (select count(*) from shared_db.UM_SYSTEM_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB44 ="SELECT CASE WHEN (select count(*) from shared_db.UM_SYSTEM_USER_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB45 ="SELECT CASE WHEN (select count(*) from shared_db.UM_USER_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
+
+    public static String COMPARE_PREVIOUS_DB46 ="SELECT CASE WHEN (select count(*) from apim_db.AM_GW_VHOST)=(?) THEN 'true' ELSE 'false' END AS Result;";
+
+//content validation.
+    public static String COMPARE_PREVIOUS_DB_CONTENT1 ="SELECT CASE WHEN (select COALESCE(sum(crc32(concat(API_ID,API_PROVIDER,API_NAME,API_VERSION,CONTEXT,CONTEXT_TEMPLATE,API_TYPE))),0) from apim_db.AM_API)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB_CONTENT2 ="SELECT CASE WHEN (select COALESCE(sum(crc32(UUID)),0) from apim_db.AM_GATEWAY_ENVIRONMENT)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB_CONTENT3 ="SELECT CASE WHEN (select COALESCE(sum(crc32(concat(NAME,DESCRIPTION))),0) from apim_db.AM_GATEWAY_ENVIRONMENT)=(?) THEN 'true' ELSE 'false' END AS Result;";
+    public static String COMPARE_PREVIOUS_DB_CONTENT4 ="SELECT CASE WHEN (select COALESCE(sum(crc32(concat(UUID,APPLICATION_ID,CONSUMER_KEY,KEY_TYPE,STATE,CREATE_MODE,APP_INFO))),0) from apim_db.AM_APPLICATION_KEY_MAPPING)=(?) THEN 'true' ELSE 'false' END AS Result;";
+
 
     /*structural validation
       1,3,5,9,s1,s2,s3
 
-    table relations validation
+     table relations validation
         2,4,6,7,8,10,11,12,s4-s10
 
-    data validation against previous database
-
+     data validation against previous database
+        -count validation
+        -content validation
 
      */
 }

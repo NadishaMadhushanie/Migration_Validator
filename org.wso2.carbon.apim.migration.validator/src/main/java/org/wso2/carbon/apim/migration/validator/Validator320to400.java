@@ -748,8 +748,7 @@ public class Validator320to400 {
 
 
     //previous db
-
-    //public static String[][] a = ReadFile.readFile();
+    //count validation.
 
     public static String comparePreviousDb1() {
 
@@ -1465,6 +1464,206 @@ public class Validator320to400 {
             return " * 3.2.0 to 4.0.0 apim_db SP_METADATA table content before and after migration validation is successful.";
         } else {
             return "3.2.0 to 4.0.0 apim_db SP_METADATA table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb40() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x40 = Integer.parseInt(map1.get("reg_association"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb40 = validate.comparePreviousDB40(x40);
+
+        if (compareDb40) {
+            return " * 3.2.0 to 4.0.0 shared_db REG_ASSOCIATION table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 shared_db REG_ASSOCIATION table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb41() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x41 = Integer.parseInt(map1.get("um_domain"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb41 = validate.comparePreviousDB41(x41);
+
+        if (compareDb41) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_DOMAIN table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 shared_db UM_DOMAIN table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb42() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x42 = Integer.parseInt(map1.get("um_role"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb42 = validate.comparePreviousDB42(x42);
+
+        if (compareDb42) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_ROLE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 shared_db UM_ROLE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb43() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x43 = Integer.parseInt(map1.get("um_system_role"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb43 = validate.comparePreviousDB43(x43);
+
+        if (compareDb43) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_SYSTEM_ROLE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 shared_db UM_SYSTEM_ROLE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb44() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x44 = Integer.parseInt(map1.get("um_system_user_role"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb44 = validate.comparePreviousDB44(x44);
+
+        if (compareDb44) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_SYSTEM_USER_ROLE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 shared_db UM_SYSTEM_USER_ROLE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb45() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x45 = Integer.parseInt(map1.get("um_user_role"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb45 = validate.comparePreviousDB45(x45);
+
+        if (compareDb45) {
+            return " * 3.2.0 to 4.0.0 shared_db UM_USER_ROLE table content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 shared_db UM_USER_ROLE table content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDb46() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        int x46 = Integer.parseInt(map1.get("am_labels"));
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb46 = validate.comparePreviousDB46(x46);
+
+        if (compareDb46) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_LABELS,AM_GW_VHOST tables content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_LABELS,AM_GW_VHOST tables content before and after migration validation is fail.";
+        }
+    }
+
+    //content validation
+
+    public static String comparePreviousDbContent1() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        String y1 = map1.get("am_api_sum");
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb47 = validate.comparePreviousDBContent1(y1);
+
+        if (compareDb47) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_API table column content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_API table column content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDbContent2() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        String y2 = map1.get("am_labels_sum1");
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb48 = validate.comparePreviousDBContent2(y2);
+
+        if (compareDb48) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_LABELS and AM_GATEWAY_ENVIRONMENT tables LABEL_ID,UUID column content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_LABELS and AM_GATEWAY_ENVIRONMENT tables LABEL_ID,UUID column content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDbContent3() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        String y3 = map1.get("am_labels_sum2");
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb49 = validate.comparePreviousDBContent3(y3);
+
+        if (compareDb49) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_LABELS and AM_GATEWAY_ENVIRONMENT tables NAME,DESCRIPTION column content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_LABELS and AM_GATEWAY_ENVIRONMENT tables NAME,DESCRIPTION  column content before and after migration validation is fail.";
+        }
+    }
+
+    public static String comparePreviousDbContent4() {
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readFile();
+
+        String y4 = map1.get("am_application_key_mapping_sum");
+
+        ValidatorDAO320to400 validate = new ValidatorDAO320to400();
+        boolean compareDb50 = validate.comparePreviousDBContent4(y4);
+
+        if (compareDb50) {
+            return " * 3.2.0 to 4.0.0 apim_db AM_APPLICATION_KEY_MAPPING table column content before and after migration validation is successful.";
+        } else {
+            return "3.2.0 to 4.0.0 apim_db AM_APPLICATION_KEY_MAPPING table column content before and after migration validation is fail.";
         }
     }
 
