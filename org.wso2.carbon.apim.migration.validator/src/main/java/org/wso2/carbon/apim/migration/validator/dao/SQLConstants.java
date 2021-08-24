@@ -10,15 +10,11 @@ public class SQLConstants {
 
 //2
     /*In AM_API table, if status is published , revision should be created      1-apim_db.AM_API , 2-apim_db.AM_API*/
-    /*public static String VALIDATE_REVISION_CREATION = "SELECT CASE WHEN (SELECT count(*) FROM ? WHERE STATUS = 'PUBLISHED' and REVISIONS_CREATED = '1')=(SELECT count(*) FROM ? WHERE STATUS = 'PUBLISHED') THEN 'true' ELSE 'false' END AS Result;";*/
     public static String VALIDATE_REVISION_CREATION = "SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_API WHERE STATUS = 'PUBLISHED' and REVISIONS_CREATED = '1')=(SELECT count(*) FROM apim_db.AM_API WHERE STATUS = 'PUBLISHED') THEN 'true' ELSE 'false' END AS Result;";
 
-    /*All the published api’s API_UUID’s should be in the AM_REVISION table.    1-API_UUID , 2-apim_db.AM_API , 3-API_UUID , 4-apim_db.AM_REVISION
-    public static String TWO = "SELECT CASE WHEN (select sum(crc32(?)) from ? where STATUS = 'PUBLISHED')=(select sum(crc32(?)) from ?) THEN 'true' ELSE 'false' END AS Result;";*/
 
 //4
     /*all entries in “API_UUID” are not null.   1-apim_db.AM_API , 2-API_UUID*/
-    //public static String VALIDATE_API_UUID_CONTENT = "SELECT CASE WHEN (SELECT count(*) FROM ? where ? is null or API_UUID = '')=(0) THEN 'true' ELSE 'false' END AS Result;";
     public static String VALIDATE_API_UUID_CONTENT = "SELECT CASE WHEN (SELECT count(*) FROM apim_db.AM_API where API_UUID is null or API_UUID = '')=(0) THEN 'true' ELSE 'false' END AS Result;";
 
 //3
@@ -163,8 +159,6 @@ public class SQLConstants {
     public static String COMPARE_PREVIOUS_DB12 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SUBSCRIBER)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB13 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SUBSCRIPTION)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB14 ="SELECT CASE WHEN (select count(*) from apim_db.AM_SYSTEM_APPS)=(?) THEN 'true' ELSE 'false' END AS Result;";
-
-
     public static String COMPARE_PREVIOUS_DB15 ="SELECT CASE WHEN (select count(*) from apim_db.CM_PURPOSE)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB16 ="SELECT CASE WHEN (select count(*) from apim_db.CM_PURPOSE_CATEGORY)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB17 ="SELECT CASE WHEN (select count(*) from apim_db.IDN_AUTH_SESSION_APP_INFO)=(?) THEN 'true' ELSE 'false' END AS Result;";
@@ -190,14 +184,12 @@ public class SQLConstants {
     public static String COMPARE_PREVIOUS_DB37 ="SELECT CASE WHEN (select count(*) from apim_db.SP_APP)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB38 ="SELECT CASE WHEN (select count(*) from apim_db.SP_INBOUND_AUTH)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB39 ="SELECT CASE WHEN (select count(*) from apim_db.SP_METADATA)=(?) THEN 'true' ELSE 'false' END AS Result;";
-
     public static String COMPARE_PREVIOUS_DB40 ="SELECT CASE WHEN (select count(*) from shared_db.REG_ASSOCIATION)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB41 ="SELECT CASE WHEN (select count(*) from shared_db.UM_DOMAIN)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB42 ="SELECT CASE WHEN (select count(*) from shared_db.UM_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB43 ="SELECT CASE WHEN (select count(*) from shared_db.UM_SYSTEM_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB44 ="SELECT CASE WHEN (select count(*) from shared_db.UM_SYSTEM_USER_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
     public static String COMPARE_PREVIOUS_DB45 ="SELECT CASE WHEN (select count(*) from shared_db.UM_USER_ROLE)=(?) THEN 'true' ELSE 'false' END AS Result;";
-
     public static String COMPARE_PREVIOUS_DB46 ="SELECT CASE WHEN (select count(*) from apim_db.AM_GW_VHOST)=(?) THEN 'true' ELSE 'false' END AS Result;";
 
 //content validation.
@@ -211,11 +203,10 @@ public class SQLConstants {
       1,3,5,9,s1,s2,s3
 
      table relations validation
-        2,4,6,7,8,10,11,12,s4-s10
+       2,4,6,7,8,10,11,12,s4-s10
 
      data validation against previous database
         -count validation
         -content validation
-
      */
 }

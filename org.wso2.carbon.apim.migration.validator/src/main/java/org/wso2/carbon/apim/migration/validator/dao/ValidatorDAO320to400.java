@@ -3,10 +3,14 @@ package org.wso2.carbon.apim.migration.validator.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.apimgt.impl.utils.APIMgtDBUtil;
 
 public class ValidatorDAO320to400 {
 
+    final Log log = LogFactory.getLog(ValidatorDAO320to400.class);
 
     //1
     public boolean validateAPIMDbTableCount(int tableCount, String dbName) {
@@ -17,7 +21,6 @@ public class ValidatorDAO320to400 {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
        try {
@@ -36,8 +39,8 @@ public class ValidatorDAO320to400 {
 
         }
        catch (SQLException e){
-            //TODO
-            System.out.println(e.getMessage());
+
+           log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -60,14 +63,11 @@ public class ValidatorDAO320to400 {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
             conn = APIMgtDBUtil.getConnection();
             ps = conn.prepareStatement(sqlQuery);
-            // ps.setString(1,tableName);
-            // ps.setString(2,tableName);
             resultSet = ps.executeQuery();
 
 
@@ -77,8 +77,7 @@ public class ValidatorDAO320to400 {
 
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -117,8 +116,7 @@ public boolean validateAPIMDbTableColumnCount(String dbName,String tableName,int
         }
 
     } catch (SQLException e) {
-        //TODO
-        System.out.println(e.getMessage());
+        log.info(e.getMessage());
 
     } finally {
         APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -140,7 +138,6 @@ public boolean validateAPIMDbUuidContent() {
 
     Connection conn = null;
     PreparedStatement ps = null;
-    List<String> versionList = new ArrayList<String>();
     ResultSet resultSet = null;
 
     try {
@@ -154,8 +151,7 @@ public boolean validateAPIMDbUuidContent() {
         }
 
     } catch (SQLException e) {
-        //TODO
-        System.out.println(e.getMessage());
+        log.info(e.getMessage());
 
     } finally {
         APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -177,7 +173,6 @@ public boolean checkTableExists(String dbName, String tableName) {
 
     Connection conn = null;
     PreparedStatement ps = null;
-    List<String> versionList = new ArrayList<String>();
     ResultSet resultSet = null;
 
     try {
@@ -193,8 +188,7 @@ public boolean checkTableExists(String dbName, String tableName) {
         }
 
     } catch (SQLException e) {
-        //TODO
-        System.out.println(e.getMessage());
+        log.info(e.getMessage());
 
     } finally {
         APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -216,7 +210,6 @@ public boolean checkRelationVhost() {
 
     Connection conn = null;
     PreparedStatement ps = null;
-    List<String> versionList = new ArrayList<String>();
     ResultSet resultSet = null;
 
     try {
@@ -230,8 +223,7 @@ public boolean checkRelationVhost() {
         }
 
     } catch (SQLException e) {
-        //TODO
-        System.out.println(e.getMessage());
+        log.info(e.getMessage());
 
     } finally {
         APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -253,7 +245,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -267,8 +258,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -290,7 +280,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -304,8 +293,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -327,7 +315,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -343,8 +330,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -365,7 +351,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -380,8 +365,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -402,7 +386,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -416,8 +399,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -438,7 +420,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -452,8 +433,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -476,7 +456,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -492,8 +471,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -514,7 +492,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -530,8 +507,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -552,7 +528,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -569,8 +544,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -591,7 +565,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -605,8 +578,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -627,7 +599,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -641,8 +612,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -663,7 +633,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -677,8 +646,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -699,7 +667,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -713,8 +680,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -735,7 +701,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -749,8 +714,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -771,7 +735,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -785,8 +748,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -808,7 +770,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -822,8 +783,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -846,7 +806,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -861,8 +820,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -882,7 +840,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -897,8 +854,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -918,7 +874,6 @@ public boolean checkRelationVhost() {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        List<String> versionList = new ArrayList<String>();
         ResultSet resultSet = null;
 
         try {
@@ -933,8 +888,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -969,8 +923,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1005,8 +958,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1041,8 +993,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1077,8 +1028,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1113,8 +1063,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1149,8 +1098,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1185,8 +1133,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1221,8 +1168,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1257,8 +1203,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1293,8 +1238,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1329,8 +1273,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1365,8 +1308,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1401,8 +1343,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1437,8 +1378,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1473,8 +1413,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1509,8 +1448,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1545,8 +1483,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1581,8 +1518,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1617,8 +1553,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1653,8 +1588,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1689,8 +1623,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1725,8 +1658,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1761,8 +1693,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1797,8 +1728,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1833,8 +1763,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1869,8 +1798,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1905,8 +1833,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1941,8 +1868,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -1977,8 +1903,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2013,8 +1938,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2049,8 +1973,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2085,8 +2008,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2121,8 +2043,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2157,8 +2078,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2193,8 +2113,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2229,8 +2148,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2265,8 +2183,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2301,8 +2218,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2337,8 +2253,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2373,8 +2288,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2409,8 +2323,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2445,8 +2358,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2481,8 +2393,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2519,8 +2430,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2555,8 +2465,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2591,8 +2500,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);
@@ -2627,8 +2535,7 @@ public boolean checkRelationVhost() {
             }
 
         } catch (SQLException e) {
-            //TODO
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
 
         } finally {
             APIMgtDBUtil.closeAllConnections(ps, conn, resultSet);

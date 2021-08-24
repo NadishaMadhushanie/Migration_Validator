@@ -5,16 +5,21 @@ import org.wso2.carbon.apim.migration.validator.fileReader.ReadFile;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 public class Validator320to400 {
 
     public static String validateTableCount()
     {
-        final Logger LOGGER = Logger.getLogger(Validator320to400.class.getName());
+
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int tableCount = Integer.parseInt(map1.get("tablesCount_apimDB"));
+        String dbName = map1.get("dbName_apimDB");
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean countValidator = validate.validateAPIMDbTableCount(177,"apim_db");
+        boolean countValidator = validate.validateAPIMDbTableCount(tableCount,dbName);
 
         if(countValidator) {
             return " * 3.2.0 to 4.0.0 apim_db table count validation is successful.";
@@ -42,9 +47,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount1()
     {
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amAPI"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amAPI");
 
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmApi = validate.validateAPIMDbTableColumnCount("apim_db","AM_API",15);
+        boolean columnCountValidatorAmApi = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmApi) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API table column count validation is successful.";
@@ -58,8 +70,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount2() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amApiClientCertificate"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amApiClientCertificate");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmApiClientCertificate = validate.validateAPIMDbTableColumnCount("apim_db","AM_API_CLIENT_CERTIFICATE",7);
+        boolean columnCountValidatorAmApiClientCertificate = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmApiClientCertificate) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_CLIENT_CERTIFICATE table column count validation is successful.";
@@ -72,8 +92,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount3() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amApiComments"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amApiComments");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmApiComments = validate.validateAPIMDbTableColumnCount("apim_db","AM_API_COMMENTS",9);
+        boolean columnCountValidatorAmApiComments = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmApiComments) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_COMMENTS table column count validation is successful.";
@@ -86,8 +114,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount4() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amApiProductMapping"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amApiProductMapping");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmApiProductMapping = validate.validateAPIMDbTableColumnCount("apim_db","AM_API_PRODUCT_MAPPING",4);
+        boolean columnCountValidatorAmApiProductMapping = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmApiProductMapping) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_PRODUCT_MAPPING table column count validation is successful.";
@@ -99,8 +135,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount5() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amApiUrlMapping"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amApiUrlMapping");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmApiUrlMapping = validate.validateAPIMDbTableColumnCount("apim_db","AM_API_URL_MAPPING",8);
+        boolean columnCountValidatorAmApiUrlMapping = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmApiUrlMapping) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_URL_MAPPING table column count validation is successful.";
@@ -113,8 +157,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount6() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amCertificateMetadata"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amCertificateMetadata");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmCertificateMataData = validate.validateAPIMDbTableColumnCount("apim_db","AM_CERTIFICATE_METADATA",4);
+        boolean columnCountValidatorAmCertificateMataData = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmCertificateMataData) {
             return " * 3.2.0 to 4.0.0 apim_db AM_CERTIFICATE_METADATA table column count validation is successful.";
@@ -127,8 +179,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount7() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amGraphqlComplexity"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amGraphqlComplexity");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmGraphqlComplexity = validate.validateAPIMDbTableColumnCount("apim_db","AM_GRAPHQL_COMPLEXITY",6);
+        boolean columnCountValidatorAmGraphqlComplexity = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmGraphqlComplexity) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GRAPHQL_COMPLEXITY table column count validation is successful.";
@@ -141,8 +201,16 @@ public class Validator320to400 {
 
     public static String validateTableColumnCount8() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amGwApiArtifacts"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amGwApiArtifacts");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmGwApiArtifacts = validate.validateAPIMDbTableColumnCount("apim_db","AM_GW_API_ARTIFACTS",4);
+        boolean columnCountValidatorAmGwApiArtifacts = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmGwApiArtifacts) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GW_API_ARTIFACTS table column count validation is successful.";
@@ -154,8 +222,16 @@ public class Validator320to400 {
     }
     public static String validateTableColumnCount9() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amGwPublishedApiDetails"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amGwPublishedApiDetails");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmGwPublishedApiDetails = validate.validateAPIMDbTableColumnCount("apim_db","AM_GW_PUBLISHED_API_DETAILS",6);
+        boolean columnCountValidatorAmGwPublishedApiDetails = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmGwPublishedApiDetails) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GW_PUBLISHED_API_DETAILS table column count validation is successful.";
@@ -167,8 +243,16 @@ public class Validator320to400 {
     }
     public static String validateTableColumnCount10() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_amPolicySubscription"));
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amPolicySubscription");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean columnCountValidatorAmPolicySubscription = validate.validateAPIMDbTableColumnCount("apim_db","AM_POLICY_SUBSCRIPTION",25);
+        boolean columnCountValidatorAmPolicySubscription = validate.validateAPIMDbTableColumnCount(dbName,tableName,columnCount);
 
         if(columnCountValidatorAmPolicySubscription) {
             return " * 3.2.0 to 4.0.0 apim_db AM_POLICY_SUBSCRIPTION table column count validation is successful.";
@@ -195,8 +279,15 @@ public class Validator320to400 {
 
     public static String checkTableExists1() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amApiServiceMapping");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_API_SERVICE_MAPPING");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_SERVICE_MAPPING table exists validation is successful.";
@@ -209,8 +300,15 @@ public class Validator320to400 {
 
     public static String checkTableExists2() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amDeploymentRevisionMapping");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_DEPLOYMENT_REVISION_MAPPING");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_DEPLOYMENT_REVISION_MAPPING table exists validation is successful.";
@@ -223,8 +321,15 @@ public class Validator320to400 {
 
     public static String checkTableExists3() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amGatewayEnvironment");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_GATEWAY_ENVIRONMENT");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GATEWAY_ENVIRONMENT table exists validation is successful.";
@@ -237,8 +342,15 @@ public class Validator320to400 {
 
     public static String checkTableExists4() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amGwApiDeployments");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_GW_API_DEPLOYMENTS");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GW_API_DEPLOYMENTS table exists validation is successful.";
@@ -251,8 +363,15 @@ public class Validator320to400 {
 
     public static String checkTableExists5() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amGwVhost");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_GW_VHOST");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_GW_VHOST table exists validation is successful.";
@@ -265,8 +384,15 @@ public class Validator320to400 {
 
     public static String checkTableExists6() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amRevision");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_REVISION");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_REVISION table exists validation is successful.";
@@ -279,8 +405,15 @@ public class Validator320to400 {
 
     public static String checkTableExists7() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amServiceCatalog");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_SERVICE_CATALOG");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_SERVICE_CATALOG table exists validation is successful.";
@@ -293,8 +426,15 @@ public class Validator320to400 {
 
     public static String checkTableExists8() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amWebhooksSubscription");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_WEBHOOKS_SUBSCRIPTION");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_SUBSCRIPTION table exists validation is successful.";
@@ -307,8 +447,15 @@ public class Validator320to400 {
 
     public static String checkTableExists9() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amWebhooksUnsubscription");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_WEBHOOKS_UNSUBSCRIPTION");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_WEBHOOKS_UNSUBSCRIPTION table exists validation is successful.";
@@ -321,8 +468,15 @@ public class Validator320to400 {
 
     public static String checkTableExists10() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnConfigAttribute");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_ATTRIBUTE");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_ATTRIBUTE table exists validation is successful.";
@@ -335,8 +489,15 @@ public class Validator320to400 {
 
     public static String checkTableExists11() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnConfigFile");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_FILE");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_FILE table exists validation is successful.";
@@ -349,8 +510,15 @@ public class Validator320to400 {
 
     public static String checkTableExists12() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnConfigResource");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_RESOURCE");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_RESOURCE table exists validation is successful.";
@@ -363,8 +531,15 @@ public class Validator320to400 {
 
     public static String checkTableExists13() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnConfigType");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_CONFIG_TYPE");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CONFIG_TYPE table exists validation is successful.";
@@ -377,8 +552,15 @@ public class Validator320to400 {
 
     public static String checkTableExists14() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnCorsAssociation");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_CORS_ASSOCIATION");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CORS_ASSOCIATION table exists validation is successful.";
@@ -391,8 +573,15 @@ public class Validator320to400 {
 
     public static String checkTableExists15() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnCorsOrigin");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_CORS_ORIGIN");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_CORS_ORIGIN table exists validation is successful.";
@@ -405,8 +594,15 @@ public class Validator320to400 {
 
     public static String checkTableExists16() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnRemoteFetchConfig");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_REMOTE_FETCH_CONFIG");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_CONFIG table exists validation is successful.";
@@ -419,8 +615,15 @@ public class Validator320to400 {
 
     public static String checkTableExists17() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnRemoteFetchRevisions");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_REMOTE_FETCH_REVISIONS");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_REMOTE_FETCH_REVISIONS table exists validation is successful.";
@@ -433,8 +636,15 @@ public class Validator320to400 {
 
     public static String checkTableExists18() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnUserFunctionalityMapping");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_USER_FUNCTIONALITY_MAPPING");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_MAPPING table exists validation is successful.";
@@ -447,8 +657,15 @@ public class Validator320to400 {
 
     public static String checkTableExists19() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_IdnUserFunctionalityProperty");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","IDN_USER_FUNCTIONALITY_PROPERTY");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db IDN_USER_FUNCTIONALITY_PROPERTY table exists validation is successful.";
@@ -461,8 +678,15 @@ public class Validator320to400 {
 
     public static String checkTableExists20() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amApirevisionMetadata");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTableExists("apim_db","AM_API_REVISION_METADATA");
+        boolean tableExists = validate.checkTableExists(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_API_REVISION_METADATA table exists validation is successful.";
@@ -521,8 +745,15 @@ public class Validator320to400 {
     //9
     public static String checkTableRemoved1() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amLabels");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTablesRemoved("apim_db","AM_LABELS");
+        boolean tableExists = validate.checkTablesRemoved(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_LABELS table remove validation is successful.";
@@ -535,8 +766,15 @@ public class Validator320to400 {
 
     public static String checkTableRemoved2() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_apimDB");
+        String tableName = map1.get("tableName_amLabelUrls");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean tableExists = validate.checkTablesRemoved("apim_db","AM_LABEL_URLS");
+        boolean tableExists = validate.checkTablesRemoved(dbName,tableName);
 
         if(tableExists) {
             return " * 3.2.0 to 4.0.0 apim_db AM_LABEL_URLS table remove validation is successful.";
@@ -599,8 +837,15 @@ public class Validator320to400 {
     //s1
     public static String sharedDbCheckTablesCount() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_sharedDB");
+        int tableCount = Integer.parseInt(map1.get("tablesCount_sharedDB"));
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean sharedDbTableCount = validate.sharedDbCheckTablesCount("shared_db",42);
+        boolean sharedDbTableCount = validate.sharedDbCheckTablesCount(dbName,tableCount);
 
         if(sharedDbTableCount) {
             return " * 3.2.0 to 4.0.0 shared_db tables count validation is successful.";
@@ -614,8 +859,15 @@ public class Validator320to400 {
     //s2
     public static String sharedDbCheckTablesExists() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        String dbName = map1.get("dbName_sharedDB");
+        String tableName = map1.get("tableName_umHybridGroupRole");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean sharedDbTableExists = validate.sharedDbCheckTablesExists("shared_db","UM_HYBRID_GROUP_ROLE");
+        boolean sharedDbTableExists = validate.sharedDbCheckTablesExists(dbName,tableName);
 
         if(sharedDbTableExists) {
             return " * 3.2.0 to 4.0.0 shared_db UM_HYBRID_GROUP_ROLE table exists validation is successful.";
@@ -629,8 +881,16 @@ public class Validator320to400 {
     //s3
     public static String sharedDbCheckColumnCount() {
 
+        Map<String, String> map1 = new HashMap<>();
+        ReadFile r = new ReadFile();
+        map1=r.readValidationRelatedData1();
+
+        int columnCount = Integer.parseInt(map1.get("columnsCount_umTenant"));
+        String dbName = map1.get("dbName_sharedDB");
+        String tableName = map1.get("tableName_umTenant");
+
         ValidatorDAO320to400 validate = new ValidatorDAO320to400();
-        boolean sharedDbColumnCount = validate.sharedDbCheckColumnCount("shared_db","UM_TENANT",7);
+        boolean sharedDbColumnCount = validate.sharedDbCheckColumnCount(dbName,tableName,columnCount);
 
         if(sharedDbColumnCount) {
             return " * 3.2.0 to 4.0.0 shared_db UM_TENANT table, column count validation is successful.";
